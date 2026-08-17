@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Review Your Booking - The Trim Town</title>
+  <meta name="description" content="Review and confirm your salon booking at The Trim Town Bahawalpur.">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -21,10 +22,10 @@
             surfaceDim: '#dadada',
             primary: '#000000',
             primaryDim: '#333333',
-            accent: '#c09172',
+            accent: '#d29676',
             textMuted: '#6b7280',
-            buttonBg: '#8c9584',
-            buttonHover: '#7a8273',
+            buttonBg: '#8b917c',
+            buttonHover: '#7a806b',
             "border-muted": "#E5E5E5",
             "on-surface": "#1a1c1c",
             "on-surface-variant": "#4c4546",
@@ -45,7 +46,7 @@
     }
     .icon-container {
       background-color: #fcf6f1;
-      color: #c09172;
+      color: #d29676;
     }
   </style>
 </head>
@@ -55,7 +56,7 @@
   <header class="w-full bg-white/80 backdrop-blur-md border-b border-border-muted/50 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
       <div class="flex-shrink-0">
-        <a class="text-3xl font-serif text-on-surface tracking-wide" href="index.html">The Trim Town</a>
+        <a class="text-2xl md:text-3xl font-serif text-on-surface tracking-wide font-medium" href="index.html">The Trim Town</a>
       </div>
       <nav class="hidden md:flex items-center justify-center space-x-10">
         <a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="index.html">Home</a>
@@ -65,7 +66,7 @@
         <a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="ourcrew.html">Our Crew</a>
       </nav>
       <div class="hidden md:block flex-shrink-0">
-        <a class="bg-[#8b917c] hover:bg-[#7a806b] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors" href="bookingform.html">Book Appointment</a>
+        <a class="bg-buttonBg hover:bg-buttonHover text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors" href="bookingform.html">Book Appointment</a>
       </div>
       <!-- Mobile Menu Button -->
       <button class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
@@ -80,7 +81,7 @@
     <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white p-6 shadow-2xl flex flex-col justify-between">
       <div>
         <div class="flex justify-between items-center mb-8">
-          <a class="font-serif text-2xl tracking-widest uppercase text-on-surface" href="index.html">The Trim Town</a>
+          <a class="font-serif text-2xl tracking-wide uppercase text-on-surface font-medium" href="index.html">The Trim Town</a>
           <button id="mobile-menu-close" class="text-gray-500 p-2">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </button>
@@ -94,7 +95,7 @@
         </nav>
       </div>
       <div class="pt-6 border-t border-gray-200">
-        <a class="w-full flex items-center justify-center py-3 bg-[#8b917c] hover:bg-[#7a806b] text-white text-sm font-medium rounded-full transition-colors" href="bookingform.html">
+        <a class="w-full flex items-center justify-center py-3 bg-buttonBg hover:bg-buttonHover text-white text-sm font-medium rounded-full transition-colors" href="bookingform.html">
           Book Appointment
         </a>
       </div>
@@ -104,7 +105,7 @@
   <main class="flex-grow w-full max-w-[800px] mx-auto px-4 sm:px-6 py-12 md:py-20 flex flex-col items-center">
     <!-- BEGIN: MainHeader -->
     <div class="text-center mb-10 w-full max-w-3xl px-4">
-      <p class="text-xs font-semibold tracking-[0.2em] text-[#c09172] uppercase mb-4">Almost There</p>
+      <p class="text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">Almost There</p>
       <h1 class="text-4xl md:text-5xl font-serif text-gray-900">Review Your Booking</h1>
     </div>
     <!-- END: MainHeader -->
@@ -124,8 +125,8 @@
             </div>
             <div>
               <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Services</p>
-              <p class="text-[17px] font-serif text-gray-900 mb-0.5" id="display-service-name">Hair Cut &amp; Styling</p>
-              <p class="text-sm text-gray-500" id="display-service-details">30 min</p>
+              <p class="text-[17px] font-serif text-gray-900 mb-0.5" id="display-service-name">Hair Cut &amp; Classic Shave</p>
+              <p class="text-sm text-gray-500" id="display-service-details">Services · 45 min</p>
             </div>
           </div>
 
@@ -139,7 +140,7 @@
             </div>
             <div>
               <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Location</p>
-              <p class="text-[17px] font-serif text-gray-900 mb-0.5" id="display-location-name">Model Town Branch</p>
+              <p class="text-[17px] font-serif text-gray-900 mb-0.5" id="display-location-name">The Trim Town Model Town Branch</p>
               <p class="text-sm text-gray-500" id="display-location-address">Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</p>
             </div>
           </div>
@@ -181,15 +182,15 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Name</p>
-            <p class="text-gray-900 text-[15px] font-medium" id="display-user-name">Guest</p>
+            <p class="text-gray-900 text-[15px] font-medium" id="display-user-name">Guest Client</p>
           </div>
           <div>
             <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Phone</p>
-            <p class="text-gray-900 text-[15px] font-medium" id="display-user-phone">+92 62 2302027</p>
+            <p class="text-gray-900 text-[15px] font-medium" id="display-user-phone">+92 300 0000000</p>
           </div>
           <div class="md:col-span-2">
             <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Email</p>
-            <p class="text-gray-900 text-[15px] font-medium" id="display-user-email">—</p>
+            <p class="text-gray-900 text-[15px] font-medium" id="display-user-email">Not provided</p>
           </div>
         </div>
       </section>
@@ -204,17 +205,17 @@
             <span class="text-gray-900 font-medium" id="bill-service-price">Price on visit</span>
           </div>
           <div class="flex justify-between items-center text-sm">
-            <span class="text-gray-500">Booking Fee</span>
-            <span class="text-green-600 font-medium">Free</span>
+            <span class="text-gray-500">Booking Reservation Fee</span>
+            <span class="text-green-600 font-medium">Free / Waived</span>
           </div>
         </div>
         <hr class="border-gray-200 mb-6">
         <div class="flex justify-between items-center mb-8">
-          <span class="text-[22px] font-serif text-gray-900">Total</span>
-          <span class="text-[22px] font-serif text-gray-900 font-semibold" id="bill-total">Pay at Salon</span>
+          <span class="text-[22px] font-serif text-gray-900">Payment Status</span>
+          <span class="text-[20px] font-serif text-gray-900 font-semibold" id="bill-total">Pay at Studio</span>
         </div>
         <div class="bg-white border border-gray-100 rounded-xl p-5 text-sm text-gray-500 leading-relaxed shadow-sm">
-          <span class="font-semibold text-gray-800">Payment due at the salon.</span> Prices will be confirmed and payment collected in person after your service is complete. No online payment is required to confirm this reservation.
+          <span class="font-semibold text-gray-800">Payment due at the studio.</span> The service amount will be settled in person upon completion. No online pre-payment is required to confirm this reservation.
         </div>
       </section>
       <!-- END: BillSummary -->
@@ -225,7 +226,7 @@
       <button class="px-8 py-3.5 rounded-full border border-gray-300 bg-white text-gray-700 font-medium hover:bg-gray-50 transition-colors w-full sm:w-auto text-[15px]" onclick="window.location.href='bookingform.html'">
         Edit Booking
       </button>
-      <button class="px-8 py-3.5 rounded-full bg-[#8c9584] hover:bg-[#7a8273] text-white font-medium transition-colors flex items-center justify-center gap-2 w-full sm:w-auto text-[15px]" onclick="handleConfirmBooking()">
+      <button class="px-8 py-3.5 rounded-full bg-buttonBg hover:bg-buttonHover text-white font-medium transition-colors flex items-center justify-center gap-2 w-full sm:w-auto text-[15px] shadow-sm" onclick="handleConfirmBooking()">
         Confirm Booking
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -236,27 +237,27 @@
   </main>
 
   <!-- BEGIN: Footer -->
-  <footer class="bg-[#322f2c] text-[#f2ebe5] w-full mt-auto">
+  <footer class="bg-[#2d2a28] text-gray-400 w-full mt-auto border-t border-gray-800">
     <div class="max-w-7xl mx-auto px-6 py-16">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div>
-          <a class="text-2xl font-serif mb-4 block text-white" href="index.html">The Trim Town</a>
-          <p class="text-sm text-[#c2bcbb] mb-6">A curated salon experience in Bahawalpur.</p>
+          <a class="text-3xl font-serif mb-4 block text-white" href="index.html">The Trim Town</a>
+          <p class="text-sm text-gray-400 mb-6">A curated salon experience in Bahawalpur.</p>
           <div class="flex gap-4">
-            <a class="text-[#c2bcbb] hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" aria-label="Instagram">
+            <a class="text-gray-400 hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
             </a>
-            <a class="text-[#c2bcbb] hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" aria-label="Facebook">
+            <a class="text-gray-400 hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
             </a>
-            <a class="text-[#c2bcbb] hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" aria-label="TikTok">
+            <a class="text-gray-400 hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.52 4.79 4.79 0 0 1-.95-.91z"></path></svg>
             </a>
           </div>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-[#8b8786] uppercase tracking-wider mb-4">Explore</h4>
-          <ul class="space-y-3 text-sm text-[#c2bcbb]">
+          <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Explore</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
             <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
             <li><a class="hover:text-white transition-colors" href="services.html">Services</a></li>
             <li><a class="hover:text-white transition-colors" href="locations.html">Locations</a></li>
@@ -265,21 +266,21 @@
           </ul>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-[#8b8786] uppercase tracking-wider mb-4">Visit</h4>
-          <ul class="space-y-3 text-sm text-[#c2bcbb]">
+          <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Visit</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
             <li><a class="hover:text-white transition-colors" href="bookingform.html">Book Appointment</a></li>
             <li><a class="hover:text-white transition-colors" href="locations.html">Find Us</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-[#8b8786] uppercase tracking-wider mb-4">Contact</h4>
-          <ul class="space-y-3 text-sm text-[#c2bcbb]">
+          <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
             <li><a class="hover:text-white transition-colors" href="tel:+92622302027">+92 62 2302027</a></li>
             <li>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</li>
           </ul>
         </div>
       </div>
-      <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 mt-8">
+      <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 mt-8">
         <p>© 2026 The Trim Town. All rights reserved.</p>
       </div>
     </div>
@@ -299,64 +300,51 @@
             document.getElementById('display-service-name').innerText = serviceNames;
             document.getElementById('bill-service-name').innerText = serviceNames;
             
-            let hasNumberPrice = false;
-            let totalPrice = 0;
+            // Calculate total duration if available
+            let totalMinutes = 0;
+            let hasMinutes = false;
+            const durations = [];
+
             bookingData.services.forEach(s => {
-              if (s.price && typeof s.price === 'number') {
-                totalPrice += Number(s.price);
-                hasNumberPrice = true;
+              const dur = s.duration || '';
+              durations.push(dur);
+              const match = dur.match(/(\d+)\s*min/i);
+              if (match) {
+                totalMinutes += parseInt(match[1], 10);
+                hasMinutes = true;
               }
             });
 
-            if (hasNumberPrice && totalPrice > 0) {
-              document.getElementById('bill-service-price').innerText = `PKR ${totalPrice.toLocaleString()}`;
-              document.getElementById('bill-total').innerText = `PKR ${totalPrice.toLocaleString()}`;
-            } else {
-              document.getElementById('bill-service-price').innerText = 'Price on visit';
-              document.getElementById('bill-total').innerText = 'Pay at Salon';
-            }
-            
-            const durations = bookingData.services.map(s => s.duration).filter(Boolean);
-            if (durations.length > 0) {
-              document.getElementById('display-service-details').innerText = durations.join(', ');
-            }
+            const durationText = hasMinutes ? `${totalMinutes} min` : (durations.filter(Boolean).join(', ') || '45 min');
+            document.getElementById('display-service-details').innerText = `${bookingData.services.length} Service${bookingData.services.length > 1 ? 's' : ''} · ${durationText}`;
           }
 
           // Map Location
           if (bookingData.location) {
             const locName = bookingData.location.name || bookingData.location;
-            const locAddress = bookingData.location.address || '';
+            const locAddress = bookingData.location.address || 'Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur';
             document.getElementById('display-location-name').innerText = locName;
-            if (locAddress) {
-              document.getElementById('display-location-address').innerText = locAddress;
-            }
+            document.getElementById('display-location-address').innerText = locAddress;
           }
 
           // Map Stylist
           if (bookingData.stylist) {
             document.getElementById('display-artisan').innerText = bookingData.stylist;
-          } else if (bookingData.artisan) {
-            document.getElementById('display-artisan').innerText = bookingData.artisan;
           }
 
           // Map When
           if (bookingData.date || bookingData.time) {
-            const dateStr = bookingData.date || '';
-            const timeStr = bookingData.time || '';
-            document.getElementById('display-when').innerText = `${dateStr} at ${timeStr}`.trim() || 'Today at 11:00 AM';
+            const dateStr = bookingData.date || 'Selected Date';
+            const timeStr = bookingData.time || '11:00 AM';
+            document.getElementById('display-when').innerText = `${dateStr} at ${timeStr}`.trim();
           }
 
-          // Map Your Information
+          // Map Contact Info
           if (bookingData.personalDetails) {
             const name = [bookingData.personalDetails.firstName, bookingData.personalDetails.lastName].filter(Boolean).join(' ');
             if (name) document.getElementById('display-user-name').innerText = name;
             if (bookingData.personalDetails.phone) document.getElementById('display-user-phone').innerText = bookingData.personalDetails.phone;
             if (bookingData.personalDetails.email) document.getElementById('display-user-email').innerText = bookingData.personalDetails.email;
-          } else if (bookingData.userInfo) {
-            const name = [bookingData.userInfo.firstName, bookingData.userInfo.lastName, bookingData.userInfo.name].filter(Boolean).join(' ');
-            if (name) document.getElementById('display-user-name').innerText = name;
-            if (bookingData.userInfo.phone) document.getElementById('display-user-phone').innerText = bookingData.userInfo.phone;
-            if (bookingData.userInfo.email) document.getElementById('display-user-email').innerText = bookingData.userInfo.email;
           }
         }
       } catch (e) {
@@ -366,8 +354,10 @@
 
     function handleConfirmBooking() {
       alert('Your appointment has been confirmed! We look forward to welcoming you at The Trim Town.');
-      localStorage.removeItem('trimTownBooking');
-      localStorage.removeItem('hicksBooking');
+      try {
+        localStorage.removeItem('trimTownBooking');
+        localStorage.removeItem('hicksBooking');
+      } catch (e) {}
       window.location.href = 'index.html';
     }
 

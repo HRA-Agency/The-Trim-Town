@@ -1,738 +1,1193 @@
-<!DOCTYPE html><html lang="en" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>The Trim Town - Booking</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Book Appointment - The Trim Town</title>
+  <meta name="description" content="Book your haircut, beard grooming, or skin therapy appointment at The Trim Town in Model Town, Bahawalpur.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
+  <script>
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
-          "colors": {
-                  "secondary-container": "#e2dfde",
-                  "on-tertiary": "#ffffff",
-                  "surface": "#f9f9f9",
-                  "primary-fixed": "#e2e2e2",
-                  "primary": "#000000",
-                  "secondary-fixed": "#e5e2e1",
-                  "outline": "#7E7576",
-                  "background": "#f9f9f9",
-                  "surface-container-low": "#f3f3f3",
-                  "on-tertiary-fixed-variant": "#464747",
-                  "on-secondary": "#ffffff",
-                  "tertiary": "#000000",
-                  "on-primary-container": "#848484",
-                  "on-primary-fixed": "#1b1b1b",
-                  "on-secondary-fixed": "#1c1b1b",
-                  "on-error": "#ffffff",
-                  "on-surface-variant": "#4c4546",
-                  "surface-bright": "#f9f9f9",
-                  "tertiary-container": "#1b1c1c",
-                  "tertiary-fixed-dim": "#c7c6c6",
-                  "inverse-on-surface": "#f1f1f1",
-                  "error": "#BA1A1A",
-                  "surface-dim": "#dadada",
-                  "surface-container-highest": "#e2e2e2",
-                  "primary-fixed-dim": "#c6c6c6",
-                  "on-primary-fixed-variant": "#474747",
-                  "on-error-container": "#93000a",
-                  "surface-variant": "#e2e2e2",
-                  "on-primary": "#FFFFFF",
-                  "secondary": "#5f5e5e",
-                  "on-secondary-fixed-variant": "#474746",
-                  "primary-container": "#1b1b1b",
-                  "on-surface": "#1a1c1c",
-                  "error-container": "#ffdad6",
-                  "inverse-surface": "#2f3131",
-                  "inverse-primary": "#c6c6c6",
-                  "surface-container-high": "#e8e8e8",
-                  "surface-container": "#eeeeee",
-                  "on-secondary-container": "#636262",
-                  "on-tertiary-container": "#848484",
-                  "outline-variant": "#cfc4c5",
-                  "surface-tint": "#5e5e5e",
-                  "secondary-fixed-dim": "#c8c6c5",
-                  "on-background": "#1a1c1c",
-                  "tertiary-fixed": "#e3e2e2",
-                  "border-muted": "#E5E5E5",
-                  "surface-container-lowest": "#ffffff",
-                  "on-tertiary-fixed": "#1b1c1c"
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
           },
-          "borderRadius": {
-                  "DEFAULT": "0.125rem",
-                  "lg": "0.25rem",
-                  "xl": "0.5rem",
-                  "full": "0.75rem"
+          colors: {
+            surface: '#f9f9f9',
+            surfaceDim: '#dadada',
+            primary: '#000000',
+            primaryDim: '#333333',
+            accent: '#d29676',
+            textMuted: '#6b7280',
+            buttonBg: '#8b917c',
+            buttonHover: '#7a806b',
+            "border-muted": "#E5E5E5",
+            "on-surface": "#1a1c1c",
+            "on-surface-variant": "#4c4546",
           },
-          "spacing": {
-                  "gutter": "24px",
-                  "stack-sm": "16px",
-                  "margin-edge": "40px",
-                  "stack-md": "40px",
-                  "stack-lg": "80px",
-                  "container-max": "1280px"
-          },
-          "fontFamily": {
-                  "sans": [
-                          "Hanken Grotesk",
-                          "sans-serif"
-                  ],
-                  "serif": [
-                          "Playfair Display",
-                          "serif"
-                  ],
-                  "headline-lg-mobile": [
-                          "Anton"
-                  ],
-                  "display-lg": [
-                          "Anton"
-                  ],
-                  "headline-lg": [
-                          "Anton"
-                  ],
-                  "body-xl": [
-                          "Hanken Grotesk"
-                  ],
-                  "label-caps": [
-                          "Hanken Grotesk"
-                  ],
-                  "body-sm": [
-                          "Hanken Grotesk"
-                  ],
-                  "headline-xl": [
-                          "Anton"
-                  ],
-                  "body-lg": [
-                          "Hanken Grotesk"
-                  ]
+          borderRadius: {
+            'custom': '1.5rem',
           }
         }
       }
     }
   </script>
-<style data-purpose="custom-styles">
+  <style data-purpose="custom-utilities">
     body {
       background-color: #f9f9f9;
       color: #1a1c1c;
       background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
       background-size: 24px 24px;
     }
-    .step-container {
-      display: none;
+    .accordion-content {
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
     }
-    .step-container.active {
-      display: block;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .accordion-content.open {
+      max-height: 3000px;
+      opacity: 1;
     }
     .selectable-card {
+      transition: all 0.2s ease;
       cursor: pointer;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(229, 229, 229, 0.5);
-      box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.05);
-    }
-    .selectable-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.08);
     }
     .selectable-card.selected {
-      border-color: #000000;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.15);
+      border-color: #8b917c;
+      background-color: #f4f6f2;
+      box-shadow: 0 4px 12px rgba(139, 145, 124, 0.15);
     }
-    .progress-step {
-      color: #848484;
-      border-bottom: 1px solid #e5e5e5;
-      padding-bottom: 0.5rem;
-      transition: all 0.3s ease;
+    .step-section {
+      display: none;
     }
-    .progress-step.active {
-      color: #1a1c1c;
-      border-bottom: 1px solid #1a1c1c;
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
-    .accordion-content.active {
-      max-height: 2000px;
-      transition: max-height 0.5s ease-in;
-    }
-    .accordion-header .chevron {
-      transition: transform 0.3s ease;
-    }
-    .accordion-header.active .chevron {
-      transform: rotate(180deg);
+    .step-section.active {
+      display: block;
     }
   </style>
 </head>
-<body class="font-sans antialiased flex flex-col min-h-screen">
-<!-- BEGIN: Header -->
-<header class="w-full bg-white/80 backdrop-blur-md border-b border-border-muted/50 sticky top-0 z-50">
-<div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-<div class="flex-shrink-0">
-<a class="text-3xl font-serif text-on-surface tracking-wide" href="index.html">The Trim Town</a>
-</div>
-<nav class="hidden md:flex items-center justify-center space-x-10">
-<a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="services.html">Services</a>
-<a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="locations.html">Locations</a>
-<a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="gallery.html">Gallery</a>
-<a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="ourcrew.html">Our Crew</a>
-</nav>
-<div class="hidden md:block flex-shrink-0">
-<a class="bg-[#8b917c] hover:bg-[#7a806b] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors" href="bookingform.html">Book Appointment</a>
-</div>
-<!-- Mobile Menu Button -->
-<button class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
-  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</button>
-</div>
-</header>
-<!-- END: Header -->
 
-<!-- Mobile Drawer Menu -->
-<div id="mobile-menu" class="fixed inset-0 bg-black/60 z-50 hidden md:hidden transition-opacity">
-  <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white p-6 shadow-2xl flex flex-col justify-between">
-    <div>
-      <div class="flex justify-between items-center mb-8">
-        <a class="font-serif text-2xl tracking-widest uppercase text-on-surface" href="index.html">The Trim Town</a>
-        <button id="mobile-menu-close" class="text-gray-500 p-2">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        </button>
+<body class="font-sans antialiased flex flex-col min-h-screen">
+  <!-- BEGIN: Header -->
+  <header class="w-full bg-white/80 backdrop-blur-md border-b border-border-muted/50 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <div class="flex-shrink-0">
+        <a class="text-2xl md:text-3xl font-serif text-on-surface tracking-wide font-medium" href="index.html">The Trim Town</a>
       </div>
-      <nav class="flex flex-col space-y-5 text-base font-medium text-gray-700">
-        <a class="hover:text-black py-1" href="index.html">Home</a>
-        <a class="hover:text-black py-1" href="services.html">Services</a>
-        <a class="hover:text-black py-1" href="locations.html">Locations</a>
-        <a class="hover:text-black py-1" href="gallery.html">Gallery</a>
-        <a class="hover:text-black py-1" href="ourcrew.html">Our Crew</a>
+      <nav class="hidden md:flex items-center justify-center space-x-10">
+        <a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="services.html">Services</a>
+        <a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="locations.html">Locations</a>
+        <a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="gallery.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors" href="ourcrew.html">Our Crew</a>
       </nav>
+      <div class="hidden md:block flex-shrink-0">
+        <a class="bg-buttonBg hover:bg-buttonHover text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors" href="bookingform.html">Book Appointment</a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
     </div>
-    <div class="pt-6 border-t border-gray-200">
-      <a class="w-full flex items-center justify-center py-3 bg-[#8b917c] hover:bg-[#7a806b] text-white text-sm font-medium rounded-full transition-colors" href="bookingform.html">
-        Book Appointment
-      </a>
+  </header>
+  <!-- END: Header -->
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black/60 z-50 hidden md:hidden transition-opacity">
+    <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white p-6 shadow-2xl flex flex-col justify-between">
+      <div>
+        <div class="flex justify-between items-center mb-8">
+          <a class="font-serif text-2xl tracking-wide uppercase text-on-surface font-medium" href="index.html">The Trim Town</a>
+          <button id="mobile-menu-close" class="text-gray-500 p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-5 text-base font-medium text-gray-700">
+          <a class="hover:text-black py-1" href="index.html">Home</a>
+          <a class="hover:text-black py-1" href="services.html">Services</a>
+          <a class="hover:text-black py-1" href="locations.html">Locations</a>
+          <a class="hover:text-black py-1" href="gallery.html">Gallery</a>
+          <a class="hover:text-black py-1" href="ourcrew.html">Our Crew</a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-gray-200">
+        <a class="w-full flex items-center justify-center py-3 bg-buttonBg hover:bg-buttonHover text-white text-sm font-medium rounded-full transition-colors" href="bookingform.html">
+          Book Appointment
+        </a>
+      </div>
     </div>
   </div>
-</div>
-<!-- END: Header -->
 
-<!-- BEGIN: Main Content -->
-<main class="flex-grow w-full max-w-5xl mx-auto px-6 py-12 md:py-20">
-<!-- Header Section -->
-<div class="text-center mb-16">
-<p class="text-[#C4A47C] text-xs font-bold tracking-[0.2em] uppercase mb-4">Reservations</p>
-<h1 class="text-4xl md:text-5xl font-serif text-on-surface font-normal">Book an Appointment</h1>
-</div>
-<!-- Progress Tracker -->
-<div class="grid grid-cols-4 gap-4 mb-16 text-xs font-medium uppercase tracking-wider text-center md:text-left">
-<div class="progress-step active" id="nav-step-1">Service</div>
-<div class="progress-step" id="nav-step-2">Location</div>
-<div class="progress-step" id="nav-step-3">Stylist</div>
-<div class="progress-step" id="nav-step-4">Details</div>
-</div>
+  <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-20 flex flex-col items-center">
+    <!-- BEGIN: MainHeader -->
+    <div class="text-center mb-12 w-full max-w-3xl px-4">
+      <p class="text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">Reservation</p>
+      <h1 class="text-4xl md:text-6xl font-serif text-gray-900 mb-6">Book Your Appointment</h1>
+      <p class="text-gray-500 text-sm md:text-base font-normal max-w-xl mx-auto leading-relaxed">
+        Select your desired treatments, preferred date and time at our Model Town Bahawalpur studio.
+      </p>
+    </div>
+    <!-- END: MainHeader -->
 
-<!-- TODO: repoint form submission target to Trim Town's inbox/number, currently wired to Hicks -->
-<form id="booking-form" onsubmit="handleBookingSubmit(event)">
-<!-- BEGIN: Step 1 - Service -->
-<div class="step-container active" id="step-1">
-<h2 class="text-2xl font-serif mb-8 text-on-surface">Choose Your Service</h2>
-<div class="space-y-4 mb-12">
-<!-- Hair & Styling Accordion -->
-<div class="border border-border-muted rounded-2xl overflow-hidden bg-white/60 backdrop-blur-md">
-<button class="accordion-header active w-full px-6 py-4 flex justify-between items-center text-left hover:bg-white/40 transition-colors" onclick="toggleAccordion(this)" type="button">
-<h3 class="text-lg font-serif text-on-surface">Hair &amp; Styling</h3>
-<svg class="w-5 h-5 text-on-surface-variant chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<div class="accordion-content active">
-<div class="p-6 pt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="selectable-card rounded-2xl px-6 py-4 relative selected" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Hair Cut</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Hair</p>
-<p class="text-sm text-on-surface-variant mb-6">Precision cutting tailored to your style.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                30 min
-              </span>
-</div>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Styling</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Hair</p>
-<p class="text-sm text-on-surface-variant mb-6">Professional finishing and hair styling.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                20 min
-              </span>
-</div>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Fiber Styling</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Hair</p>
-<p class="text-sm text-on-surface-variant mb-6">High-hold texture and volume definition.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                25 min
-              </span>
-</div>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Head Wash &amp; Conditioning</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Hair</p>
-<p class="text-sm text-on-surface-variant mb-6">Deep cleansing and scalp hydration.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                20 min
-              </span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Beard Accordion -->
-<div class="border border-border-muted rounded-2xl overflow-hidden bg-white/60 backdrop-blur-md">
-<button class="accordion-header w-full px-6 py-4 flex justify-between items-center text-left hover:bg-white/40 transition-colors" onclick="toggleAccordion(this)" type="button">
-<h3 class="text-lg font-serif text-on-surface">Beard</h3>
-<svg class="w-5 h-5 text-on-surface-variant chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<div class="accordion-content">
-<div class="p-6 pt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Shave</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Beard</p>
-<p class="text-sm text-on-surface-variant mb-6">Traditional straight-razor ritual.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                30 min
-              </span>
-</div>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Beard Styling</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Beard</p>
-<p class="text-sm text-on-surface-variant mb-6">Sharp sculpting and structural shaping.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                25 min
-              </span>
-</div>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Beard Trim</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Beard</p>
-<p class="text-sm text-on-surface-variant mb-6">Maintenance and precision cleanup.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                20 min
-              </span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Face & Body Accordion -->
-<div class="border border-border-muted rounded-2xl overflow-hidden bg-white/60 backdrop-blur-md">
-<button class="accordion-header w-full px-6 py-4 flex justify-between items-center text-left hover:bg-white/40 transition-colors" onclick="toggleAccordion(this)" type="button">
-<h3 class="text-lg font-serif text-on-surface">Face &amp; Body</h3>
-<svg class="w-5 h-5 text-on-surface-variant chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<div class="accordion-content">
-<div class="p-6 pt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Skin Cleansing &amp; Facial</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Face &amp; Body</p>
-<p class="text-sm text-on-surface-variant mb-6">Deep cleansing and refreshing therapy.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                30 min
-              </span>
-</div>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Head Massage</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Face &amp; Body</p>
-<p class="text-sm text-on-surface-variant mb-6">Deep relaxation and scalp tension release.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                20 min
-              </span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Hands & Feet Accordion -->
-<div class="border border-border-muted rounded-2xl overflow-hidden bg-white/60 backdrop-blur-md">
-<button class="accordion-header w-full px-6 py-4 flex justify-between items-center text-left hover:bg-white/40 transition-colors" onclick="toggleAccordion(this)" type="button">
-<h3 class="text-lg font-serif text-on-surface">Hands &amp; Feet</h3>
-<svg class="w-5 h-5 text-on-surface-variant chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<div class="accordion-content">
-<div class="p-6 pt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Manicure</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Hands &amp; Feet</p>
-<p class="text-sm text-on-surface-variant mb-6">Comprehensive hand and nail therapy.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                45 min
-              </span>
-</div>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-4 relative" onclick="selectCard(this, 'service')">
-<h4 class="text-base font-serif mb-1">Pedicure</h4>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-3">Hands &amp; Feet</p>
-<p class="text-sm text-on-surface-variant mb-6">Complete revitalizing foot care.</p>
-<div class="flex justify-between items-center text-sm">
-<span class="font-medium">Price on visit</span>
-<span class="text-on-surface-variant flex items-center gap-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                50 min
-              </span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="flex justify-end">
-<button class="bg-[#8C9A7E] hover:opacity-90 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors flex items-center gap-2" onclick="nextStep(2)" type="button">Continue <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
-</div>
-</div>
-<!-- END: Step 1 -->
+    <!-- BEGIN: Progress Tracker -->
+    <div class="w-full max-w-2xl mb-12 px-4">
+      <div class="flex items-center justify-between relative">
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-gray-200 -z-0"></div>
+        <div id="step-bar" class="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] bg-buttonBg transition-all duration-300 -z-0" style="width: 0%;"></div>
 
-<!-- BEGIN: Step 2 - Location -->
-<div class="step-container" id="step-2">
-<h2 class="text-2xl font-serif mb-8 text-on-surface">Location</h2>
-<div class="max-w-xl mb-12">
-<div class="selectable-card rounded-2xl p-6 relative selected" onclick="selectCard(this, 'location')">
-<h3 class="text-xl font-serif mb-2">Model Town Branch</h3>
-<p class="text-sm text-on-surface-variant mb-4">Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</p>
-<div class="text-xs text-on-surface-variant flex items-center gap-2">
-<svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<!-- TODO: confirm full weekly hours -->
-<span>Opens 11:00 AM</span>
-</div>
-</div>
-</div>
-<div class="flex justify-between items-center">
-<button class="text-on-surface-variant hover:text-on-surface px-4 py-2 text-sm font-medium transition-colors flex items-center gap-2" onclick="prevStep(1)" type="button">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-  Back
-</button>
-<button class="bg-[#8C9A7E] hover:opacity-90 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors flex items-center gap-2" onclick="nextStep(3)" type="button">
-  Continue
-  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-</div>
-</div>
-<!-- END: Step 2 -->
+        <!-- Step 1 Indicator -->
+        <div class="step-indicator flex flex-col items-center gap-2 relative z-10" data-step="1">
+          <div class="w-10 h-10 rounded-full bg-buttonBg text-white flex items-center justify-center font-medium text-sm transition-colors border-4 border-[#f9f9f9]">1</div>
+          <span class="text-xs font-medium text-gray-900">Services</span>
+        </div>
+        <!-- Step 2 Indicator -->
+        <div class="step-indicator flex flex-col items-center gap-2 relative z-10" data-step="2">
+          <div class="w-10 h-10 rounded-full bg-white text-gray-400 flex items-center justify-center font-medium text-sm transition-colors border-4 border-[#f9f9f9] shadow-sm">2</div>
+          <span class="text-xs font-medium text-gray-400">Location</span>
+        </div>
+        <!-- Step 3 Indicator -->
+        <div class="step-indicator flex flex-col items-center gap-2 relative z-10" data-step="3">
+          <div class="w-10 h-10 rounded-full bg-white text-gray-400 flex items-center justify-center font-medium text-sm transition-colors border-4 border-[#f9f9f9] shadow-sm">3</div>
+          <span class="text-xs font-medium text-gray-400">Stylist</span>
+        </div>
+        <!-- Step 4 Indicator -->
+        <div class="step-indicator flex flex-col items-center gap-2 relative z-10" data-step="4">
+          <div class="w-10 h-10 rounded-full bg-white text-gray-400 flex items-center justify-center font-medium text-sm transition-colors border-4 border-[#f9f9f9] shadow-sm">4</div>
+          <span class="text-xs font-medium text-gray-400">Schedule</span>
+        </div>
+      </div>
+    </div>
+    <!-- END: Progress Tracker -->
 
-<!-- BEGIN: Step 3 - Stylist -->
-<div class="step-container" id="step-3">
-<h2 class="text-2xl font-serif mb-8 text-on-surface">Choose Your Stylist</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-<div class="selectable-card rounded-2xl px-6 py-6 relative" onclick="selectCard(this, 'artisan')">
-<h3 class="text-lg font-serif mb-2">Exclusive Stylist</h3>
-<p class="text-sm text-on-surface-variant">Senior stylists with years of specialized salon experience.</p>
-</div>
-<div class="selectable-card rounded-2xl px-6 py-6 relative selected" onclick="selectCard(this, 'artisan')">
-<h3 class="text-lg font-serif mb-2">Standard Stylist</h3>
-<p class="text-sm text-on-surface-variant">Dedicated stylists delivering sharp precision cuts and grooming.</p>
-</div>
-</div>
-<div class="flex justify-between items-center">
-<button class="text-on-surface-variant hover:text-on-surface px-4 py-2 text-sm font-medium transition-colors flex items-center gap-2" onclick="prevStep(2)" type="button">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-  Back
-</button>
-<button class="bg-[#8C9A7E] hover:opacity-90 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors flex items-center gap-2" onclick="nextStep(4)" type="button">
-  Continue
-  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-</div>
-</div>
-<!-- END: Step 3 -->
+    <!-- ========================================== -->
+    <!-- STEP 1: SELECT SERVICES -->
+    <!-- ========================================== -->
+    <div id="step-1" class="step-section active w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-serif text-gray-900 mb-2">Select Services</h2>
+        <p class="text-sm text-gray-500">Choose one or multiple services from the categories below</p>
+      </div>
 
-<!-- BEGIN: Step 4 - Details -->
-<div class="step-container" id="step-4">
-<h2 class="text-2xl font-serif mb-8 text-on-surface">Your Details</h2>
-<div class="grid grid-cols-1 gap-6 mb-8">
-<div class="col-span-full mb-4">
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4">Select Date</label>
-<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar" id="dates-container">
-  <!-- Dynamically populated by JS -->
-</div>
-</div><div>
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Preferred Time</label>
-<select class="w-full bg-white/60 backdrop-blur-md border-white/50 border rounded-xl focus:border-primary focus:ring-0 p-4 text-sm text-on-surface shadow-sm">
-<option>Select a time</option>
-<option>11:00 AM</option>
-<option>12:00 PM</option>
-<option>01:00 PM</option>
-<option>02:00 PM</option>
-<option>03:00 PM</option>
-<option>04:00 PM</option>
-<option>05:00 PM</option>
-<option>06:00 PM</option>
-<option>07:00 PM</option>
-<option>08:00 PM</option>
-<option>09:00 PM</option>
-</select>
-</div>
-</div>
-<div class="mb-6">
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Full Name</label>
-<input class="w-full bg-white/60 backdrop-blur-md border-white/50 border rounded-xl focus:border-primary focus:ring-0 p-4 text-sm text-on-surface shadow-sm" placeholder="Your name..." type="text" required>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-<div>
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Email (Optional)</label>
-<input class="w-full bg-white/60 backdrop-blur-md border-white/50 border rounded-xl focus:border-primary focus:ring-0 p-4 text-sm text-on-surface shadow-sm" placeholder="your@email.com" type="email">
-</div>
-<div>
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Phone</label>
-<input class="w-full bg-white/60 backdrop-blur-md border-white/50 border rounded-xl focus:border-primary focus:ring-0 p-4 text-sm text-on-surface shadow-sm" placeholder="+92 300 0000000" type="tel" required>
-</div>
-</div>
-<div class="mb-12">
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Notes (Optional)</label>
-<textarea class="w-full bg-white/60 backdrop-blur-md border-white/50 border rounded-xl focus:border-primary focus:ring-0 p-4 text-sm text-on-surface shadow-sm" placeholder="Any preferences or requests..." rows="4"></textarea>
-</div>
-<div class="flex justify-between items-center">
-<button class="text-on-surface-variant hover:text-on-surface px-4 py-2 text-sm font-medium transition-colors flex items-center gap-2" onclick="prevStep(3)" type="button">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-  Back
-</button>
-<button class="bg-[#8C9A7E] hover:opacity-90 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors flex items-center gap-2" type="submit">
-  Review &amp; Confirm
-  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-</div>
-</div>
-<!-- END: Step 4 -->
-</form>
-</main>
-<!-- END: Main Content -->
+      <div class="space-y-4 mb-10">
+        <!-- Category 1: Hair & Styling -->
+        <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/80 overflow-hidden shadow-sm">
+          <button type="button" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors" onclick="toggleAccordion('acc-hair')">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-buttonBg"></span>
+              <span class="text-lg font-serif font-medium text-gray-900">Hair &amp; Styling</span>
+              <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full font-sans">14 Treatments</span>
+            </div>
+            <svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform duration-200 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+          <div id="acc-hair" class="accordion-content open px-6 pb-6 pt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Service Item -->
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Hair Cut', 'Hair', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Hair Cut</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Precision cut with seamless transition and textured crown.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
 
-<!-- BEGIN: Footer -->
-<footer class="bg-[#322f2c] text-[#f2ebe5] w-full mt-auto">
-<div class="max-w-7xl mx-auto px-6 py-16">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-<div>
-<a class="text-2xl font-serif mb-4 block" href="index.html">The Trim Town</a>
-<p class="text-sm text-[#c2bcbb] mb-6">A curated salon experience in Bahawalpur.</p>
-<div class="flex gap-4">
-<a class="text-[#c2bcbb] hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
-<a class="text-[#c2bcbb] hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg></a>
-<a class="text-[#c2bcbb] hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" aria-label="TikTok"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.52 4.79 4.79 0 0 1-.95-.91z"></path></svg></a>
-</div>
-</div>
-<div>
-<h4 class="text-xs font-bold text-[#8b8786] uppercase tracking-wider mb-4">Explore</h4>
-<ul class="space-y-3 text-sm text-[#c2bcbb]">
-<li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
-<li><a class="hover:text-white transition-colors" href="services.html">Services</a></li>
-<li><a class="hover:text-white transition-colors" href="locations.html">Locations</a></li>
-<li><a class="hover:text-white transition-colors" href="gallery.html">Gallery</a></li>
-<li><a class="hover:text-white transition-colors" href="ourcrew.html">Our Crew</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-xs font-bold text-[#8b8786] uppercase tracking-wider mb-4">Visit</h4>
-<ul class="space-y-3 text-sm text-[#c2bcbb]">
-<li><a class="hover:text-white transition-colors" href="bookingform.html">Book Appointment</a></li>
-<li><a class="hover:text-white transition-colors" href="locations.html">Find Us</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-xs font-bold text-[#8b8786] uppercase tracking-wider mb-4">Contact</h4>
-<ul class="space-y-3 text-sm text-[#c2bcbb]">
-  <li><a class="hover:text-white transition-colors" href="tel:+92622302027">+92 62 2302027</a></li>
-  <li>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</li>
-</ul>
-</div>
-</div>
-<div class="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-[#c2bcbb] mt-8">
-  <p>© 2026 The Trim Town. All rights reserved.</p>
-</div>
-</div>
-</footer>
-<!-- END: Footer -->
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Styling', 'Hair', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Styling</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Expert styling tailored to your specific hair type and face shape.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
 
-<script data-purpose="form-navigation">
-    function showStep(stepNumber) {
-      document.querySelectorAll('.step-container').forEach(el => {
-        el.classList.remove('active');
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Fiber Styling', 'Hair', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Fiber Styling</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Advanced styling using high-quality hair fibers for maximum hold.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Colour Spray', 'Hair', '20 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Colour Spray</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Temporary color application for a quick and vibrant change.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>20 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Head Wash & Conditioning', 'Hair', '25 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Head Wash &amp; Conditioning</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Relaxing deep cleanse followed by nourishing conditioning.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>25 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Repair Rescue', 'Hair', '40 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Repair Rescue</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Intensive treatment aimed at restoring vitality to damaged hair.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>40 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Protein + Hair Restore', 'Hair', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Protein + Hair Restore</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Deeply penetrates the hair shaft to strengthen and rebuild.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Anti-Dandruff', 'Hair', '35 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Anti-Dandruff</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Specialized treatment designed to combat stubborn dandruff.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>35 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Argabeta with Argan Oil & Beta Carotene', 'Hair', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Argabeta with Argan Oil</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Luxurious blend providing intense shine and deep hydration.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Hair Keratin', 'Hair', '120 min', 'Price on Consultation')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Hair Keratin</span>
+                  <span class="text-xs font-semibold text-gray-900">Consultation</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Transformative treatment that smooths and straightens frizzy hair.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>120 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Hair Dye', 'Hair', '60 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Hair Dye</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Professional hair coloring using premium dyes for rich tones.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>60 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Hair Polish', 'Hair', '40 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Hair Polish</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">A glossy finish that revitalizes color and adds immense shine.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>40 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Hair Streaking', 'Hair', '60 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Hair Streaking</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Subtle or bold streaks to add dimension and character to your hair.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>60 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Hair Color Application', 'Hair', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Hair Color Application</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Expert application services for your preferred hair color.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Beard -->
+        <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/80 overflow-hidden shadow-sm">
+          <button type="button" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors" onclick="toggleAccordion('acc-beard')">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-[#c09172]"></span>
+              <span class="text-lg font-serif font-medium text-gray-900">Beard</span>
+              <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full font-sans">7 Treatments</span>
+            </div>
+            <svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+          <div id="acc-beard" class="accordion-content px-6 pb-6 pt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Shave', 'Beard', '25 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Shave</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">A clean, traditional shave with hot towels and premium lather.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>25 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Beard Styling', 'Beard', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Beard Styling</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Sculpting and defining the beard to match your facial structure.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Beard Trim', 'Beard', '20 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Beard Trim</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Quick and precise trim to keep your beard sharp and neat.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>20 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Beard Dye', 'Beard', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Beard Dye</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Even coloring that blends naturally with your existing hair tones.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Beard Color Application', 'Beard', '25 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Beard Color Application</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Professional application of your preferred beard color products.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>25 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Sideburn Color', 'Beard', '15 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Sideburn Color</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Targeted coloring to ensure sideburns match your overall look.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>15 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Mustache Color', 'Beard', '15 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Mustache Color</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Precise dye application to achieve a fuller mustache tone.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>15 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Kids & Women -->
+        <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/80 overflow-hidden shadow-sm">
+          <button type="button" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors" onclick="toggleAccordion('acc-kids')">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-[#8b917c]"></span>
+              <span class="text-lg font-serif font-medium text-gray-900">Kids &amp; Women</span>
+              <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full font-sans">2 Treatments</span>
+            </div>
+            <svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+          <div id="acc-kids" class="accordion-content px-6 pb-6 pt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Baby Cut', 'Kids & Women', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Baby Cut</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Gentle and patient haircutting experience for your little ones.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Girls Hair Cut', 'Kids & Women', '40 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Girls Hair Cut</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Stylish and manageable cuts designed specifically for young girls.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>40 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Face & Body -->
+        <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/80 overflow-hidden shadow-sm">
+          <button type="button" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors" onclick="toggleAccordion('acc-face')">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-[#d29676]"></span>
+              <span class="text-lg font-serif font-medium text-gray-900">Face &amp; Body</span>
+              <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full font-sans">7 Treatments</span>
+            </div>
+            <svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+          <div id="acc-face" class="accordion-content px-6 pb-6 pt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Threading', 'Face & Body', '15 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Threading</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Precise hair removal for perfectly shaped eyebrows.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>15 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Waxing', 'Face & Body', '20 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Waxing</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Facial hair removal leaving the skin smooth and hair-free.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>20 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Body Trimming', 'Face & Body', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Body Trimming</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Professional body hair trimming for a groomed look.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Head Massage', 'Face & Body', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Head Massage</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Soothing massage to relieve tension and promote relaxation.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Shoulder Massage', 'Face & Body', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Shoulder Massage</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Targeted relief for tense shoulder muscles and stress.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Foot Massage', 'Face & Body', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Foot Massage</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Revitalizing foot massage to improve circulation.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Shower & Refresh', 'Face & Body', '15 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Shower &amp; Refresh</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Cleansing and refreshing shower post-treatment.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>15 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 5: Hands & Feet -->
+        <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/80 overflow-hidden shadow-sm">
+          <button type="button" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors" onclick="toggleAccordion('acc-hands')">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-[#a19c8d]"></span>
+              <span class="text-lg font-serif font-medium text-gray-900">Hands &amp; Feet</span>
+              <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full font-sans">7 Treatments</span>
+            </div>
+            <svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+          <div id="acc-hands" class="accordion-content px-6 pb-6 pt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Hand Polish', 'Hands & Feet', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Hand Polish</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Exfoliation and hydration for smooth, polished hands.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Foot Polish', 'Hands & Feet', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Foot Polish</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Revitalizing scrub and polish to renew tired feet.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Manicure', 'Hands & Feet', '40 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Manicure</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Comprehensive nail care, cuticle work, and neat finish.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>40 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Pedicure', 'Hands & Feet', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Pedicure</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Deeply restorative foot treatment for relaxation.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Signature Manicure', 'Hands & Feet', '50 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Signature Manicure</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Elevated hand care ritual with extended massage.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>50 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Signature Pedicure', 'Hands & Feet', '60 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Signature Pedicure</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Luxury foot treatment for unparalleled softness and care.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>60 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Full Arm Care', 'Hands & Feet', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Full Arm Care</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Complete exfoliation and moisturizing treatment for full arm.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 6: Skin Care -->
+        <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/80 overflow-hidden shadow-sm">
+          <button type="button" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors" onclick="toggleAccordion('acc-skin')">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-[#7a8273]"></span>
+              <span class="text-lg font-serif font-medium text-gray-900">Skin Care</span>
+              <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full font-sans">5 Treatments</span>
+            </div>
+            <svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+          <div id="acc-skin" class="accordion-content px-6 pb-6 pt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Basic Cleansing', 'Skin Care', '30 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Basic Cleansing</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Removes impurities and balances skin tone.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>30 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Executive Cleansing', 'Skin Care', '45 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Executive Cleansing</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Deep-cleansing facial designed for stressed skin.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>45 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Facials', 'Skin Care', '50 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Facials</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Customized facial treatments designed to rejuvenate skin.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>50 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Skin Brightening', 'Skin Care', '60 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Skin Brightening</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Therapy to reduce pigmentation and reveal a radiant glow.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>60 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="selectable-card p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-300" onclick="toggleServiceCard(this, 'Professional Skin Treatments', 'Skin Care', '60 min', 'Price on visit')">
+                <div class="flex justify-between items-start mb-1">
+                  <span class="font-medium text-gray-900 text-sm">Professional Skin Treatments</span>
+                  <span class="text-xs font-semibold text-gray-900">Price on visit</span>
+                </div>
+                <p class="text-xs text-gray-500 mb-2">Clinical-grade skincare solutions for anti-aging and rejuvenation.</p>
+                <div class="flex justify-between items-center text-[11px] text-gray-400">
+                  <span>60 min</span>
+                  <span class="checkbox-indicator w-4 h-4 rounded border border-gray-300 flex items-center justify-center text-white text-[10px]"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1 Bottom Bar -->
+      <div class="flex items-center justify-between pt-6 border-t border-gray-200">
+        <div>
+          <span class="text-sm font-medium text-gray-900" id="selected-services-count">0 services selected</span>
+        </div>
+        <button type="button" class="px-8 py-3.5 bg-buttonBg hover:bg-buttonHover text-white rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed" id="step-1-next" onclick="goToStep(2)" disabled>
+          Next: Location &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- STEP 2: SELECT LOCATION -->
+    <!-- ========================================== -->
+    <div id="step-2" class="step-section w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-serif text-gray-900 mb-2">Select Studio Location</h2>
+        <p class="text-sm text-gray-500">Visit us at our flagship studio in Bahawalpur</p>
+      </div>
+
+      <div class="max-w-xl mx-auto mb-10">
+        <div class="selectable-card selected p-6 rounded-2xl border-2 border-buttonBg bg-[#f4f6f2] shadow-sm relative" data-location-id="model-town" onclick="selectLocationCard(this)">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-accent">Flagship Studio</span>
+              <h3 class="text-xl font-serif text-gray-900 mt-1 mb-2">Model Town Branch</h3>
+              <p class="text-sm text-gray-600 mb-3 flex items-start gap-2">
+                <svg class="w-4 h-4 shrink-0 text-gray-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur
+              </p>
+              <p class="text-sm text-gray-600 flex items-center gap-2">
+                <svg class="w-4 h-4 shrink-0 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                +92 62 2302027
+              </p>
+            </div>
+            <div class="w-6 h-6 rounded-full bg-buttonBg text-white flex items-center justify-center text-xs">
+              &#10003;
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-6 border-t border-gray-200">
+        <button type="button" class="px-6 py-3 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors" onclick="goToStep(1)">
+          &larr; Back to Services
+        </button>
+        <button type="button" class="px-8 py-3.5 bg-buttonBg hover:bg-buttonHover text-white rounded-full font-medium transition-colors" onclick="goToStep(3)">
+          Next: Stylist &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- STEP 3: SELECT STYLIST -->
+    <!-- ========================================== -->
+    <div id="step-3" class="step-section w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-serif text-gray-900 mb-2">Choose Stylist Preference</h2>
+        <p class="text-sm text-gray-500">Select your preferred stylist tier</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
+        <!-- Standard Stylist -->
+        <div class="selectable-card selected p-6 rounded-2xl border-2 border-buttonBg bg-[#f4f6f2] shadow-sm flex flex-col justify-between" data-stylist="Standard Stylist" onclick="selectStylistCard(this, 'Standard Stylist')">
+          <div>
+            <div class="w-12 h-12 rounded-full bg-buttonBg/20 text-buttonBg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </div>
+            <h3 class="text-lg font-serif text-gray-900 mb-1">Standard Stylist</h3>
+            <p class="text-xs text-gray-500 leading-relaxed mb-4">Experienced, certified team members providing high-quality salon styling and care.</p>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-200/60 text-xs font-semibold text-gray-900">
+            <span>Standard Rate</span>
+            <span class="text-buttonBg font-bold">&#10003; Selected</span>
+          </div>
+        </div>
+
+        <!-- Exclusive Stylist -->
+        <div class="selectable-card p-6 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 shadow-sm flex flex-col justify-between" data-stylist="Exclusive Stylist" onclick="selectStylistCard(this, 'Exclusive Stylist')">
+          <div>
+            <div class="w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </div>
+            <h3 class="text-lg font-serif text-gray-900 mb-1">Exclusive Stylist</h3>
+            <p class="text-xs text-gray-500 leading-relaxed mb-4">Senior artisan with specialized craftsmanship and bespoke consultations.</p>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-200/60 text-xs font-semibold text-gray-900">
+            <span>Priority Consultation</span>
+            <span class="text-gray-400">Select</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-6 border-t border-gray-200">
+        <button type="button" class="px-6 py-3 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors" onclick="goToStep(2)">
+          &larr; Back to Location
+        </button>
+        <button type="button" class="px-8 py-3.5 bg-buttonBg hover:bg-buttonHover text-white rounded-full font-medium transition-colors" onclick="goToStep(4)">
+          Next: Schedule &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- STEP 4: DATE, TIME & CONTACT INFO -->
+    <!-- ========================================== -->
+    <div id="step-4" class="step-section w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-serif text-gray-900 mb-2">Schedule &amp; Details</h2>
+        <p class="text-sm text-gray-500">Select your date, preferred time, and enter your contact info</p>
+      </div>
+
+      <div class="bg-white/80 backdrop-blur-md rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm mb-10">
+        <!-- Date Selection Carousel -->
+        <div class="mb-8">
+          <label class="block text-xs font-semibold tracking-wider text-gray-500 uppercase mb-3">Select Date</label>
+          <div class="grid grid-cols-4 sm:grid-cols-7 gap-2" id="date-carousel">
+            <!-- Populated via JavaScript for next 7 days -->
+          </div>
+        </div>
+
+        <!-- Time Picker -->
+        <div class="mb-8">
+          <label class="block text-xs font-semibold tracking-wider text-gray-500 uppercase mb-3">Preferred Time Slot</label>
+          <div class="grid grid-cols-3 sm:grid-cols-4 gap-2.5" id="time-slots">
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700 active-slot bg-buttonBg text-white border-buttonBg" onclick="selectTimeSlot(this, '11:00 AM')">11:00 AM</button>
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700" onclick="selectTimeSlot(this, '12:00 PM')">12:00 PM</button>
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700" onclick="selectTimeSlot(this, '01:00 PM')">01:00 PM</button>
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700" onclick="selectTimeSlot(this, '02:00 PM')">02:00 PM</button>
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700" onclick="selectTimeSlot(this, '03:30 PM')">03:30 PM</button>
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700" onclick="selectTimeSlot(this, '05:00 PM')">05:00 PM</button>
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700" onclick="selectTimeSlot(this, '06:30 PM')">06:30 PM</button>
+            <button type="button" class="time-slot-btn py-2.5 px-3 rounded-xl border border-gray-200 bg-white text-xs font-medium hover:border-buttonBg text-gray-700" onclick="selectTimeSlot(this, '08:00 PM')">08:00 PM</button>
+          </div>
+        </div>
+
+        <hr class="border-gray-100 my-8">
+
+        <!-- Contact Information -->
+        <div>
+          <label class="block text-xs font-semibold tracking-wider text-gray-500 uppercase mb-4">Your Contact Information</label>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="first-name" class="block text-xs font-medium text-gray-700 mb-1">First Name *</label>
+              <input type="text" id="first-name" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-buttonBg focus:ring-buttonBg" placeholder="e.g. Ali" required>
+            </div>
+            <div>
+              <label for="last-name" class="block text-xs font-medium text-gray-700 mb-1">Last Name</label>
+              <input type="text" id="last-name" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-buttonBg focus:ring-buttonBg" placeholder="e.g. Khan">
+            </div>
+            <div>
+              <label for="phone-number" class="block text-xs font-medium text-gray-700 mb-1">Phone Number *</label>
+              <input type="tel" id="phone-number" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-buttonBg focus:ring-buttonBg" placeholder="e.g. 0300 1234567" required>
+            </div>
+            <div>
+              <label for="email-address" class="block text-xs font-medium text-gray-700 mb-1">Email Address (Optional)</label>
+              <input type="email" id="email-address" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-buttonBg focus:ring-buttonBg" placeholder="e.g. ali@example.com">
+            </div>
+            <div class="md:col-span-2">
+              <label for="special-notes" class="block text-xs font-medium text-gray-700 mb-1">Special Notes / Requests</label>
+              <textarea id="special-notes" rows="2" class="w-full px-4 py-2 rounded-xl border border-gray-200 text-sm focus:border-buttonBg focus:ring-buttonBg" placeholder="Any specific requirements..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-6 border-t border-gray-200">
+        <button type="button" class="px-6 py-3 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors" onclick="goToStep(3)">
+          &larr; Back to Stylist
+        </button>
+        <button type="button" class="px-8 py-3.5 bg-buttonBg hover:bg-buttonHover text-white rounded-full font-medium transition-colors flex items-center gap-2 shadow-sm" onclick="submitBookingForm()">
+          Review Booking &rarr;
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- BEGIN: Footer -->
+  <footer class="bg-[#2d2a28] text-gray-400 py-16 px-8 mt-auto border-t border-gray-800">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div>
+        <a class="text-3xl font-serif text-white mb-4 block" href="index.html">The Trim Town</a>
+        <p class="text-sm text-gray-400 mb-6 leading-relaxed">A curated salon experience in Bahawalpur.</p>
+        <div class="flex space-x-4">
+          <a class="text-gray-400 hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+          </a>
+          <a class="text-gray-400 hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+          </a>
+          <a class="text-gray-400 hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.52 4.79 4.79 0 0 1-.95-.91z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Explore</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Services</a></li>
+          <li><a class="hover:text-white transition-colors" href="locations.html">Locations</a></li>
+          <li><a class="hover:text-white transition-colors" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-white transition-colors" href="ourcrew.html">Our Crew</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Visit</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a class="hover:text-white transition-colors" href="bookingform.html">Book Appointment</a></li>
+          <li><a class="hover:text-white transition-colors" href="locations.html">Find Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a class="hover:text-white transition-colors" href="tel:+92622302027">+92 62 2302027</a></li>
+          <li>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+      <p>© 2026 The Trim Town. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    let selectedServices = [];
+    let selectedStylist = 'Standard Stylist';
+    let selectedLocation = {
+      name: 'The Trim Town Model Town Branch',
+      address: 'Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur',
+      phone: '+92 62 2302027'
+    };
+    let selectedDate = '';
+    let selectedTime = '11:00 AM';
+
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const header = content.previousElementSibling;
+      const icon = header.querySelector('.accordion-icon');
+      
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        icon.classList.remove('rotate-180');
+      } else {
+        content.classList.add('open');
+        icon.classList.add('rotate-180');
+      }
+    }
+
+    function toggleServiceCard(el, name, category, duration, price) {
+      const idx = selectedServices.findIndex(s => s.name === name);
+      const indicator = el.querySelector('.checkbox-indicator');
+      
+      if (idx > -1) {
+        selectedServices.splice(idx, 1);
+        el.classList.remove('selected');
+        indicator.innerHTML = '';
+        indicator.classList.remove('bg-buttonBg', 'border-buttonBg');
+      } else {
+        selectedServices.push({ name, category, duration, price });
+        el.classList.add('selected');
+        indicator.innerHTML = '&#10003;';
+        indicator.classList.add('bg-buttonBg', 'border-buttonBg');
+      }
+
+      const count = selectedServices.length;
+      document.getElementById('selected-services-count').innerText = `${count} service${count === 1 ? '' : 's'} selected`;
+      document.getElementById('step-1-next').disabled = count === 0;
+    }
+
+    function selectLocationCard(el) {
+      document.querySelectorAll('#step-2 .selectable-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    function selectStylistCard(el, stylist) {
+      selectedStylist = stylist;
+      document.querySelectorAll('#step-3 .selectable-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    function selectTimeSlot(el, time) {
+      selectedTime = time;
+      document.querySelectorAll('.time-slot-btn').forEach(btn => {
+        btn.classList.remove('bg-buttonBg', 'text-white', 'border-buttonBg');
+        btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
       });
-      const target = document.getElementById(`step-${stepNumber}`);
-      if (target) target.classList.add('active');
+      el.classList.add('bg-buttonBg', 'text-white', 'border-buttonBg');
+      el.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+    }
 
-      document.querySelectorAll('.progress-step').forEach((el, index) => {
-        if (index < stepNumber) {
-          el.classList.add('active');
+    function selectDateSlot(el, dateStr) {
+      selectedDate = dateStr;
+      document.querySelectorAll('.date-slot-btn').forEach(btn => {
+        btn.classList.remove('bg-buttonBg', 'text-white', 'border-buttonBg');
+        btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+      });
+      el.classList.add('bg-buttonBg', 'text-white', 'border-buttonBg');
+      el.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+    }
+
+    function goToStep(stepNumber) {
+      document.querySelectorAll('.step-section').forEach(sec => sec.classList.remove('active'));
+      const targetSec = document.getElementById(`step-${stepNumber}`);
+      if (targetSec) targetSec.classList.add('active');
+
+      const stepBar = document.getElementById('step-bar');
+      if (stepBar) {
+        stepBar.style.width = `${((stepNumber - 1) / 3) * 100}%`;
+      }
+
+      document.querySelectorAll('.step-indicator').forEach(ind => {
+        const step = parseInt(ind.dataset.step);
+        const circle = ind.querySelector('div');
+        const label = ind.querySelector('span');
+
+        if (step <= stepNumber) {
+          circle.classList.add('bg-buttonBg', 'text-white');
+          circle.classList.remove('bg-white', 'text-gray-400');
+          label.classList.add('text-gray-900');
+          label.classList.remove('text-gray-400');
         } else {
-          el.classList.remove('active');
+          circle.classList.remove('bg-buttonBg', 'text-white');
+          circle.classList.add('bg-white', 'text-gray-400');
+          label.classList.remove('text-gray-900');
+          label.classList.add('text-gray-400');
         }
       });
-      
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function nextStep(step) {
-      showStep(step);
-    }
+    function initDateCarousel() {
+      const carousel = document.getElementById('date-carousel');
+      if (!carousel) return;
+      
+      carousel.innerHTML = '';
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      
+      const today = new Date();
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(today);
+        d.setDate(today.getDate() + i);
+        
+        const dayName = i === 0 ? 'Today' : days[d.getDay()];
+        const dateNum = d.getDate();
+        const monthName = months[d.getMonth()];
+        const fullDateStr = `${days[d.getDay()]}, ${dateNum} ${monthName} ${d.getFullYear()}`;
 
-    function prevStep(step) {
-      showStep(step);
-    }
+        if (i === 0) selectedDate = fullDateStr;
 
-    function selectCard(cardElement, group) {
-      if (group === 'service') {
-        cardElement.classList.toggle('selected');
-      } else {
-        const container = cardElement.parentElement;
-        container.querySelectorAll('.selectable-card').forEach(el => {
-          el.classList.remove('selected');
-        });
-        cardElement.classList.add('selected');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `date-slot-btn py-3 px-2 rounded-xl border text-center transition-colors flex flex-col items-center justify-center ${i === 0 ? 'bg-buttonBg text-white border-buttonBg' : 'bg-white text-gray-700 border-gray-200 hover:border-buttonBg'}`;
+        btn.innerHTML = `
+          <span class="text-[10px] font-semibold uppercase tracking-wider opacity-80">${dayName}</span>
+          <span class="text-base font-bold my-0.5">${dateNum}</span>
+          <span class="text-[10px] opacity-80">${monthName}</span>
+        `;
+        btn.onclick = () => selectDateSlot(btn, fullDateStr);
+        carousel.appendChild(btn);
       }
     }
 
-    function toggleAccordion(headerElement) {
-      const content = headerElement.nextElementSibling;
-      const allHeaders = document.querySelectorAll('.accordion-header');
-      const allContents = document.querySelectorAll('.accordion-content');
+    function submitBookingForm() {
+      const firstName = document.getElementById('first-name').value.trim();
+      const lastName = document.getElementById('last-name').value.trim();
+      const phone = document.getElementById('phone-number').value.trim();
+      const email = document.getElementById('email-address').value.trim();
+      const notes = document.getElementById('special-notes').value.trim();
 
-      allHeaders.forEach(header => {
-        if (header !== headerElement) {
-          header.classList.remove('active');
-          if (header.nextElementSibling) header.nextElementSibling.classList.remove('active');
-        }
-      });
-
-      headerElement.classList.toggle('active');
-      if (content) content.classList.toggle('active');
-    }
-
-    function handleBookingSubmit(event) {
-      event.preventDefault();
-      
-      const selectedServices = [];
-      document.querySelectorAll('#step-1 .selectable-card.selected').forEach(card => {
-        const nameEl = card.querySelector('h4') || card.querySelector('h3');
-        const durationEl = card.querySelector('.text-on-surface-variant');
-        
-        const name = nameEl ? nameEl.innerText.trim() : 'Hair Cut';
-        const duration = durationEl ? durationEl.innerText.trim() : '30 min';
-        selectedServices.push({ name, price: 'Price on visit', duration });
-      });
+      if (!firstName) {
+        alert('Please enter your first name.');
+        document.getElementById('first-name').focus();
+        return;
+      }
+      if (!phone) {
+        alert('Please enter your phone number.');
+        document.getElementById('phone-number').focus();
+        return;
+      }
 
       if (selectedServices.length === 0) {
-        selectedServices.push({ name: 'Hair Cut & Styling', price: 'Price on visit', duration: '45 min' });
+        alert('Please select at least one service.');
+        goToStep(1);
+        return;
       }
-
-      const locName = 'Model Town Branch';
-      const locAddress = 'Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur';
-
-      const artisanCard = document.querySelector('#step-3 .selectable-card.selected');
-      const artisanTier = artisanCard && artisanCard.querySelector('h3') ? artisanCard.querySelector('h3').innerText.trim() : 'Standard Stylist';
-
-      const dateCard = document.querySelector('#step-4 .selectable-card.selected');
-      const dateStr = dateCard ? (dateCard.getAttribute('data-date-str') || 'Today') : 'Today';
-
-      const timeSelect = document.querySelector('#step-4 select');
-      const timeStr = timeSelect && timeSelect.value && timeSelect.value !== 'Select a time' ? timeSelect.value : '11:00 AM';
-
-      const nameInput = document.querySelector('#step-4 input[type="text"]');
-      const emailInput = document.querySelector('#step-4 input[type="email"]');
-      const phoneInput = document.querySelector('#step-4 input[type="tel"]');
-      const notesInput = document.querySelector('#step-4 textarea');
-
-      const fullName = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'Guest';
-      const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : '';
-      const phone = phoneInput && phoneInput.value.trim() ? phoneInput.value.trim() : '+92 62 2302027';
-      const notes = notesInput ? notesInput.value.trim() : '';
 
       const bookingData = {
         services: selectedServices,
-        location: { name: locName, address: locAddress },
-        branch: { name: locName, address: locAddress },
-        stylist: artisanTier,
-        artisan: artisanTier,
-        date: dateStr,
-        time: timeStr,
-        personalDetails: { firstName: fullName, lastName: '', email: email, phone: phone },
-        userInfo: { name: fullName, email: email, phone: phone },
-        notes: notes
+        location: selectedLocation,
+        stylist: selectedStylist,
+        date: selectedDate,
+        time: selectedTime,
+        personalDetails: {
+          firstName,
+          lastName,
+          phone,
+          email,
+          notes
+        }
       };
 
-      localStorage.setItem('hicksBooking', JSON.stringify(bookingData));
-      localStorage.setItem('trimTownBooking', JSON.stringify(bookingData));
+      try {
+        localStorage.setItem('trimTownBooking', JSON.stringify(bookingData));
+      } catch (e) {
+        console.error('Failed to save to localStorage', e);
+      }
+
       window.location.href = 'checkout.html';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const datesContainer = document.getElementById('dates-container');
-      if (datesContainer) {
-        datesContainer.innerHTML = '';
-        const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        const today = new Date();
-        
-        for (let i = 0; i < 7; i++) {
-          const nextDate = new Date();
-          nextDate.setDate(today.getDate() + i);
-          
-          const isToday = i === 0;
-          const dayLabel = isToday ? 'Today' : daysOfWeek[nextDate.getDay()];
-          const dayNum = nextDate.getDate();
-          const monthName = nextDate.toLocaleString('default', { month: 'long' });
-          const yearNum = nextDate.getFullYear();
-          const formattedDate = `${dayLabel} (${dayNum} ${monthName} ${yearNum})`;
-
-          const card = document.createElement('div');
-          card.className = `flex-shrink-0 w-16 h-20 flex flex-col items-center justify-center rounded-xl selectable-card${isToday ? ' selected' : ''}`;
-          card.setAttribute('onclick', "selectCard(this, 'date')");
-          card.setAttribute('data-date-str', formattedDate);
-          
-          card.innerHTML = `
-            <span class="text-[10px] font-bold uppercase tracking-wider opacity-60">${dayLabel}</span>
-            <span class="text-lg font-serif">${dayNum}</span>
-          `;
-          datesContainer.appendChild(card);
-        }
-      }
+      initDateCarousel();
     });
 
     const menuBtn = document.getElementById('mobile-menu-btn');
@@ -756,5 +1211,6 @@
         }
       });
     }
-</script>
-</body></html>
+  </script>
+</body>
+</html>

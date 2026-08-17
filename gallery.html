@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Gallery - The Trim Town</title>
+  <meta name="description" content="Explore our gallery of hairstyles, beard sculpting, and skincare transformations at The Trim Town Bahawalpur.">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -17,8 +18,10 @@
             'surface-dim': '#dadada',
             primary: '#000000',
             secondary: '#555555',
-            accent: '#b47960',
-            footer: '#272523',
+            accent: '#d29676',
+            button: '#8b917c',
+            buttonHover: '#7a806b',
+            footer: '#2d2a28',
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -31,24 +34,26 @@
 </head>
 <body class="bg-surface text-gray-800 flex flex-col min-h-screen">
   <!-- BEGIN: Header -->
-  <header class="bg-surface/95 backdrop-blur-md py-6 px-8 flex items-center justify-between sticky top-0 z-50 border-b border-gray-200/50">
-    <a class="text-2xl font-serif tracking-widest text-primary uppercase font-medium" href="index.html">The Trim Town</a>
-    <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
-      <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-      <a class="hover:text-primary transition-colors" href="services.html">Services</a>
-      <a class="hover:text-primary transition-colors" href="locations.html">Locations</a>
-      <a class="text-primary border-b border-primary pb-1 font-medium" href="gallery.html">Gallery</a>
-      <a class="hover:text-primary transition-colors" href="ourcrew.html">Our Crew</a>
-    </nav>
-    <div class="hidden md:block">
-      <a class="bg-[#8b9181] hover:bg-[#787d6f] text-white text-sm font-medium py-2.5 px-6 rounded-full transition-colors" href="bookingform.html">
-        Book Appointment
-      </a>
+  <header class="bg-white/90 backdrop-blur-md py-6 px-8 sticky top-0 z-50 border-b border-gray-200/60">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a class="text-2xl md:text-3xl font-serif tracking-wide text-primary font-medium" href="index.html">The Trim Town</a>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+        <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="hover:text-primary transition-colors" href="services.html">Services</a>
+        <a class="hover:text-primary transition-colors" href="locations.html">Locations</a>
+        <a class="text-primary border-b border-primary pb-1 font-medium" href="gallery.html">Gallery</a>
+        <a class="hover:text-primary transition-colors" href="ourcrew.html">Our Crew</a>
+      </nav>
+      <div class="hidden md:block">
+        <a class="bg-button hover:bg-buttonHover text-white text-sm font-medium py-2.5 px-6 rounded-full transition-colors" href="bookingform.html">
+          Book Appointment
+        </a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-primary p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
     </div>
-    <!-- Mobile Menu Button -->
-    <button class="md:hidden text-primary p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </button>
   </header>
   <!-- END: Header -->
 
@@ -57,7 +62,7 @@
     <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white p-6 shadow-2xl flex flex-col justify-between">
       <div>
         <div class="flex justify-between items-center mb-8">
-          <a class="font-serif text-2xl tracking-widest uppercase text-primary" href="index.html">The Trim Town</a>
+          <a class="font-serif text-2xl tracking-wide uppercase text-primary font-medium" href="index.html">The Trim Town</a>
           <button id="mobile-menu-close" class="text-gray-500 p-2">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </button>
@@ -71,7 +76,7 @@
         </nav>
       </div>
       <div class="pt-6 border-t border-gray-200">
-        <a class="w-full flex items-center justify-center py-3 bg-[#8b9181] hover:bg-[#787d6f] text-white text-sm font-medium rounded-full transition-colors" href="bookingform.html">
+        <a class="w-full flex items-center justify-center py-3 bg-button hover:bg-buttonHover text-white text-sm font-medium rounded-full transition-colors" href="bookingform.html">
           Book Appointment
         </a>
       </div>
@@ -85,7 +90,7 @@
       <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-4">Our Work</p>
       <h1 class="text-5xl md:text-6xl font-serif text-primary mb-6">The <span class="italic font-light">Gallery</span></h1>
       <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-        A collection of hair styling, precision cuts, and grooming transformations at The Trim Town.
+        A collection of moments — the looks, the textures, and the grooming transformations crafted by our dedicated stylists at Al Ashraf Mall, Bahawalpur.
       </p>
     </section>
     <!-- END: Gallery Intro -->
@@ -93,21 +98,20 @@
     <!-- BEGIN: Gallery Filter -->
     <section class="mb-12 flex justify-center">
       <div class="flex flex-wrap justify-center gap-3 px-4">
-        <button class="filter-btn bg-[#8b9181] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors" data-filter="all" onclick="filterGallery('all')">All</button>
-        <button class="filter-btn bg-white hover:bg-gray-100 text-gray-600 px-6 py-2 rounded-full text-sm font-medium shadow-sm transition-colors border border-gray-100" data-filter="hair" onclick="filterGallery('hair')">Hair</button>
-        <button class="filter-btn bg-white hover:bg-gray-100 text-gray-600 px-6 py-2 rounded-full text-sm font-medium shadow-sm transition-colors border border-gray-100" data-filter="skincare" onclick="filterGallery('skincare')">Skincare</button>
-        <button class="filter-btn bg-white hover:bg-gray-100 text-gray-600 px-6 py-2 rounded-full text-sm font-medium shadow-sm transition-colors border border-gray-100" data-filter="beard" onclick="filterGallery('beard')">Beard</button>
+        <button class="filter-btn bg-button text-white px-6 py-2 rounded-full text-sm font-medium transition-colors" data-filter="all" onclick="filterGallery('all')">All</button>
+        <button class="filter-btn bg-white hover:bg-gray-100 text-gray-600 px-6 py-2 rounded-full text-sm font-medium shadow-sm transition-colors border border-gray-200" data-filter="hair" onclick="filterGallery('hair')">Hair</button>
+        <button class="filter-btn bg-white hover:bg-gray-100 text-gray-600 px-6 py-2 rounded-full text-sm font-medium shadow-sm transition-colors border border-gray-200" data-filter="skincare" onclick="filterGallery('skincare')">Skincare</button>
+        <button class="filter-btn bg-white hover:bg-gray-100 text-gray-600 px-6 py-2 rounded-full text-sm font-medium shadow-sm transition-colors border border-gray-200" data-filter="beard" onclick="filterGallery('beard')">Beard</button>
       </div>
     </section>
     <!-- END: Gallery Filter -->
 
     <!-- BEGIN: Gallery Grid -->
-    <!-- TODO: replace all images with client-provided Trim Town photos -->
     <section class="px-8 pb-24 max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="gallery-container">
         <!-- Hair items -->
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-[4/3]" data-category="hair">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO_swWO_5AWSAK0WtQy7c-nalIJFhqSGN5NJoHqEIHs_m-_mPQ5fRxkXtK0fvIfVekGkM_dVgaPnI1eZVXnVEkkzCNfG768rEgwDXQqf5KjiUI8FL9ArFGK4A1-mk2z0w1TaXT6ZpJKoPp1rxzirGr8ljhpJbvSkEU2xL14-gXVyzGJ-jNpcsTh_8YIzyKWzqB_A6QSwnQBd82Vmf5y4cBDfBl5smEOMvSnh9xes7S5RX8sAzD-GRPgVCBerOSl0AIDw" alt="Precision Haircut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO_swWO_5AWSAK0WtQy7c-nalIJFhqSGN5NJoHqEIHs_m-_mPQ5fRxkXtK0fvIfVekGkM_dVgaPnI1eZVXnVEkkzCNfG768rEgwDXQqf5KjiUI8FL9ArFGK4A1-mk2z0w1TaXT6ZpJKoPp1rxzirGr8ljhpJbvSkEU2xL14-gXVyzGJ-jNpcsTh_8YIzyKWzqB_A6QSwnQBd82Vmf5y4cBDfBl5smEOMvSnh9xes7S5RX8sAzD-GRPgVCBerOSl0AIDw" alt="Architectural Haircut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
             <p class="text-white text-sm font-medium">Precision Architectural Cut</p>
           </div>
@@ -116,12 +120,12 @@
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-square md:aspect-auto md:row-span-2" data-category="hair">
           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3CKP_KZnUEjBtWob7NowYojvcGeAuD35GvIFr2kE0SoZmb-OsFrpKFppCEMesyy9xw42HPgnNXc5QWDfrIASYzzfUczylHT_yo2-vSan8B0xZhid65KHu8q3I7NxwXPwB88qdoSl3EzNa6yAiWA15yJTuHnQN8GP9jxo4gXgaNtems5VZ_Rf36pDerOlyfjCq_GDmgeBa1stmj5_8MMJN1g_UziVespWu6PLBrod2YbeQY3l8t-vqUl63ycYG_28_bQ" alt="Editorial Styling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-            <p class="text-white text-sm font-medium">Editorial Styling</p>
+            <p class="text-white text-sm font-medium">Modern Gentlemen Styling</p>
           </div>
         </div>
 
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-[4/3]" data-category="hair">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy-eEEsUFwBQIsMvZIglwR6Gy7s-XFhCtWdu6M7y2oCO03LhHuk_K9TLCyGlyuss1ZZ3GU7xiJl9lpRGqxA6O-vdJ8X5-JRGJ2YQIyWeZqY2MuoWkM91GPHvXPxF80UgpORH7qRYN48dKFAat3GgrUfFBvSaNLhBNLnWtg6LK1YMrP3Rxu2wGi4nKShVQxa6l03OyZ3NkKpFpPsBZZ8IOBOMx2YVTn41Y67aOsShCl4YrACUiX4IJMFXsiQUEbVIx_ig" alt="Textured Cut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy-eEEsUFwBQIsMvZIglwR6Gy7s-XFhCtWdu6M7y2oCO03LhHuk_K9TLCyGlyuss1ZZ3GU7xiJl9lpRGqxA6O-vdJ8X5-JRGJ2YQIyWeZqY2MuoWkM91GPHvXPxF80UgpORH7qRYN48dKFAat3GgrUfFBvSaNLhBNLnWtg6LK1YMrP3Rxu2wGi4nKShVQxa6l03OyZ3NkKpFpPsBZZ8IOBOMx2YVTn41Y67aOsShCl4YrACUiX4IJMFXsiQUEbVIx_ig" alt="Textured Fade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
             <p class="text-white text-sm font-medium">Textured Taper Fade</p>
           </div>
@@ -129,31 +133,31 @@
 
         <!-- Beard items -->
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-[4/3]" data-category="beard">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVLs9qr4r4KTfbkhpktAq6OzEmBkzHnByRokMq1M7xaguKpKtSdNIl33N6f5bSeeFaMJxhYLLf4NeIYbES5xUc4fsnMRui4Yn5CaDtlHC-Ehw1q-B-gX7TDIgkTd23K3NYzY90sW8_iDHTSrCtq40Gnbn2LacYCmuQWdTERZq5SR2_r0Az9ECufcNHszsRc1obs3qjwHIQi-Si6yIdmgGt5euKmUqEtYDdwODJGtgPV76Di_6omFtLncD24Mx4oiNtmQ" alt="Classic Straight Razor Shave" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVLs9qr4r4KTfbkhpktAq6OzEmBkzHnByRokMq1M7xaguKpKtSdNIl33N6f5bSeeFaMJxhYLLf4NeIYbES5xUc4fsnMRui4Yn5CaDtlHC-Ehw1q-B-gX7TDIgkTd23K3NYzY90sW8_iDHTSrCtq40Gnbn2LacYCmuQWdTERZq5SR2_r0Az9ECufcNHszsRc1obs3qjwHIQi-Si6yIdmgGt5euKmUqEtYDdwODJGtgPV76Di_6omFtLncD24Mx4oiNtmQ" alt="Classic Shave" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
             <p class="text-white text-sm font-medium">Traditional Razor Ritual</p>
           </div>
         </div>
 
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-square md:aspect-auto md:row-span-2" data-category="beard">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRxIkwt6_TQGOlPJkNlaxcnBfpR6qBNFQI5l0MwE1DpXV4lcHqkeifXHfUgQoYiUPQU1FtMVhxpqSFRSPL2gdt3vbIULiI4NwyRFscXynf0TWPpbC-yXreG171n7Cx8RIU2NZ2zIJljdOzYjTyas_yDIi6z2dlNXKODsFGr-MD0GjInHF5k-sfZSckvAJsaaYfj3LBqtw8gsAGSeBvWEJdMD2UQtbNY10RRA8BmzGLMlFf_w_TYjspE8l5gwa33vtWyKQVgqoEvR7G8g" alt="Beard Sculpting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRxIkwt6_TQGOlPJkNlaxcnBfpR6qBNFQI5l0MwE1DpXV4lcHqkeifXHfUgQoYiUPQU1FtMVhxpqSFRSPL2gdt3vbIULiI4NwyRFscXynf0TWPpbC-yXreG171n7Cx8RIU2NZ2zIJljdOzYjTyas_yDIi6z2dlNXKODsFGr-MD0GjInHF5k-sfZSckvAJsaaYfj3LBqtw8gsAGSeBvWEJdMD2UQtbNY10RRA8BmzGLMlFf_w_TYjspE8l5gwa33vtWyKQVgqoEvR7G8g" alt="Executive Beard Sculpting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-            <p class="text-white text-sm font-medium">Beard Contouring &amp; Grooming</p>
+            <p class="text-white text-sm font-medium">Executive Beard Contouring</p>
           </div>
         </div>
 
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-[4/3]" data-category="beard">
           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaAm9-IH3aPd7RDG3MzLeQVmHDuAdMrydb3IalVLjxrVBUdc3ccGmQD42jg6YJmiffoZbXZF-vZkzn6Zc72Zhwv2VLzuU46AQfadyU1FSJNLSoTzTAJ0u7pfgq4XkO3s08EHWnuUbkBA28su4bYTUeJRXlnh8NcxHeJ3r8hmiL2neTPDfRvlFYdBATHWpBSoJYh73IqGkyW277a9lVekZiMNAWsVRWDtpPiIPCj7Ow9mrKeEKe6qN-0P5S2FMTmTZUQ7bpJIXew5SksA" alt="Beard Shaping" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-            <p class="text-white text-sm font-medium">Beard Fade & Lineup</p>
+            <p class="text-white text-sm font-medium">Beard Fade &amp; Lineup</p>
           </div>
         </div>
 
         <!-- Skincare items -->
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-[4/3]" data-category="skincare">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsYFY94Sw1ZV_KQ_dsohfkUy7uZ5jZEu4PKBQ9q1Qt8qJZywNd9To6YMZZwnXn-UtPriG1epNOvZzeBH2mvE_tHHeIewbOxyJP2UjbAj9Uqa_9vg914W7H4UrIaR-noVhFaKx4n9kUXQknedmsJcP2xwKgHeBnh9C2OoJWt_4eraab7DOk7c-xt-JAddpzlHs_Ge90gifptYL1VVK3Q4H9Rk4UwjjBT_wPLpyuBKJ0bjSTvp0zqXSSH1LPpBYIhsWTsg" alt="Scalp Therapy and Rejuvenation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsYFY94Sw1ZV_KQ_dsohfkUy7uZ5jZEu4PKBQ9q1Qt8qJZywNd9To6YMZZwnXn-UtPriG1epNOvZzeBH2mvE_tHHeIewbOxyJP2UjbAj9Uqa_9vg914W7H4UrIaR-noVhFaKx4n9kUXQknedmsJcP2xwKgHeBnh9C2OoJWt_4eraab7DOk7c-xt-JAddpzlHs_Ge90gifptYL1VVK3Q4H9Rk4UwjjBT_wPLpyuBKJ0bjSTvp0zqXSSH1LPpBYIhsWTsg" alt="Scalp Therapy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-            <p class="text-white text-sm font-medium">Deep Scalp Therapy & Wash</p>
+            <p class="text-white text-sm font-medium">Deep Scalp Therapy &amp; Wash</p>
           </div>
         </div>
 
@@ -165,7 +169,7 @@
         </div>
 
         <div class="gallery-item overflow-hidden rounded-2xl shadow-sm bg-white border border-gray-100 group relative aspect-[4/3]" data-category="skincare">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY8j86eJDX-nWeYSNOYgTSb8J8InkBFnnY7yy0WC2U-NruKO1YiXZq6gLbITrdFmx1yCSy_3VvsQJrbaY0FjD4Kitbz-2RtggQAkOGn5ZWQctOm9U_6kET_3oKaD5vI0Ooj0jYeAdh5NTQagoE5aVFUYjclBeJ5-wmU2yhZnBi8qy7e9fafp4Oi0noLxsFFEcaUNlLFBUWhZxi06prq4Yf7kVCYKNRlBznLomWaGh9Y3sLHYmIXYHMAPhnA-REYv4i-69AvgVoncpXag" alt="Charcoal Mask and Scrub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY8j86eJDX-nWeYSNOYgTSb8J8InkBFnnY7yy0WC2U-NruKO1YiXZq6gLbITrdFmx1yCSy_3VvsQJrbaY0FjD4Kitbz-2RtggQAkOGn5ZWQctOm9U_6kET_3oKaD5vI0Ooj0jYeAdh5NTQagoE5aVFUYjclBeJ5-wmU2yhZnBi8qy7e9fafp4Oi0noLxsFFEcaUNlLFBUWhZxi06prq4Yf7kVCYKNRlBznLomWaGh9Y3sLHYmIXYHMAPhnA-REYv4i-69AvgVoncpXag" alt="Charcoal Mask" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
             <p class="text-white text-sm font-medium">Rejuvenating Charcoal Mask</p>
           </div>
@@ -177,28 +181,28 @@
   <!-- END: Main Content -->
 
   <!-- BEGIN: Footer -->
-  <footer class="bg-footer text-gray-400 py-16 px-8 mt-auto">
+  <footer class="bg-footer text-gray-400 py-16 px-8 mt-auto border-t border-gray-800">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
       <!-- Brand Info -->
-      <div class="col-span-1 md:col-span-1">
-        <a class="text-white text-2xl font-serif mb-4 block" href="index.html">The Trim Town</a>
-        <p class="text-sm mb-6 leading-relaxed">
+      <div>
+        <a class="text-white text-3xl font-serif mb-4 block" href="index.html">The Trim Town</a>
+        <p class="text-sm mb-6 leading-relaxed text-gray-400">
           A curated salon experience in Bahawalpur.
         </p>
         <div class="flex space-x-4">
-          <a class="hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" aria-label="Instagram">
+          <a class="text-gray-400 hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
           </a>
-          <a class="hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" aria-label="Facebook">
+          <a class="text-gray-400 hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
           </a>
-          <a class="hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" aria-label="TikTok">
+          <a class="text-gray-400 hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.52 4.79 4.79 0 0 1-.95-.91z"></path></svg>
           </a>
         </div>
       </div>
       <!-- Explore Links -->
-      <div class="col-span-1">
+      <div>
         <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Explore</h4>
         <ul class="space-y-3 text-sm">
           <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
@@ -209,7 +213,7 @@
         </ul>
       </div>
       <!-- Visit Links -->
-      <div class="col-span-1">
+      <div>
         <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Visit</h4>
         <ul class="space-y-3 text-sm">
           <li><a class="hover:text-white transition-colors" href="bookingform.html">Book Appointment</a></li>
@@ -217,7 +221,7 @@
         </ul>
       </div>
       <!-- Contact Info -->
-      <div class="col-span-1">
+      <div>
         <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Contact</h4>
         <ul class="space-y-3 text-sm">
           <li><a class="hover:text-white transition-colors" href="tel:+92622302027">+92 62 2302027</a></li>
@@ -245,11 +249,11 @@
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(btn => {
         if (btn.dataset.filter === category) {
-          btn.classList.add('bg-[#8b9181]', 'text-white');
-          btn.classList.remove('bg-white', 'text-gray-600');
+          btn.classList.add('bg-button', 'text-white');
+          btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
         } else {
-          btn.classList.remove('bg-[#8b9181]', 'text-white');
-          btn.classList.add('bg-white', 'text-gray-600');
+          btn.classList.remove('bg-button', 'text-white');
+          btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
         }
       });
     }

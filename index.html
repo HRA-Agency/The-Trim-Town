@@ -1,12 +1,15 @@
-<!DOCTYPE html><html lang="en" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>The Trim Town - Hair & Grooming Studio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>The Trim Town - Hair &amp; Grooming Studio</title>
+  <meta name="description" content="A curated hair and grooming studio in Model Town, Bahawalpur. Precision haircuts, beard styling, skin therapy, and luxury gentlemen care.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -45,6 +48,8 @@
               'error-container': '#ffdad6',
               'on-error-container': '#410002',
               accent: '#d29676',
+              button: '#8b917c',
+              buttonHover: '#7a806b',
             }
           },
           borderRadius: {
@@ -56,7 +61,7 @@
       }
     }
   </script>
-<style data-purpose="custom-styles" type="text/tailwindcss">
+  <style data-purpose="custom-styles" type="text/tailwindcss">
     @layer utilities {
       .text-balance {
         text-wrap: balance;
@@ -77,379 +82,387 @@
   </style>
 </head>
 <body class="antialiased selection:bg-brand-primary selection:text-white">
-<!-- BEGIN: Hero Section -->
-<header class="relative h-[90vh] min-h-[600px] flex flex-col justify-between overflow-hidden text-white rounded-b-3xl">
-<!-- Background Image -->
-<div class="absolute inset-0 z-0">
-<img alt="Salon Interior" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK0TzXj7PDVbQpmyu7TrmqmmzLp08wCAvwLaoAQphsxJBAzeg8-PkrStMTKEhGvjWo88gEntIaiG3s0qo0fhRGsgpp6D5Ihwaw1vQNFaKf4BeZEwY6MJfRaVcv2lxL_vtdKSWqS1mUGRC23yoMqCVTK_qnoqQCqvUGhv8_KK3nA3NMoziK0GifYLJwCYTeoWMTUA8ClFPehRJCyma7OdtKSW3YTZ1BE5Iyxecb_A9wi_NFk9zRC3tHAOWr7h4fUhQp6UB9KTmqZgVDQw">
-<div class="absolute inset-0 bg-black/40"></div>
-</div>
-<!-- Navigation -->
-<nav class="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-<a class="text-2xl font-serif tracking-wide" href="index.html">The Trim Town</a>
-<div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-<a class="text-white border-b border-white pb-1" href="index.html">Home</a>
-<a class="hover:text-white/80 transition-colors" href="services.html">Services</a>
-<a class="hover:text-white/80 transition-colors" href="locations.html">Locations</a>
-<a class="hover:text-white/80 transition-colors" href="gallery.html">Gallery</a>
-<a class="hover:text-white/80 transition-colors" href="ourcrew.html">Our Crew</a>
-</div>
-<div class="hidden md:block">
-<a class="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all" href="bookingform.html">
+  <!-- BEGIN: Hero Section -->
+  <header class="relative h-[90vh] min-h-[600px] flex flex-col justify-between overflow-hidden text-white rounded-b-3xl">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img alt="Salon Interior" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK0TzXj7PDVbQpmyu7TrmqmmzLp08wCAvwLaoAQphsxJBAzeg8-PkrStMTKEhGvjWo88gEntIaiG3s0qo0fhRGsgpp6D5Ihwaw1vQNFaKf4BeZEwY6MJfRaVcv2lxL_vtdKSWqS1mUGRC23yoMqCVTK_qnoqQCqvUGhv8_KK3nA3NMoziK0GifYLJwCYTeoWMTUA8ClFPehRJCyma7OdtKSW3YTZ1BE5Iyxecb_A9wi_NFk9zRC3tHAOWr7h4fUhQp6UB9KTmqZgVDQw">
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a class="text-2xl md:text-3xl font-serif tracking-wide font-medium" href="index.html">The Trim Town</a>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a class="text-white border-b border-white pb-1" href="index.html">Home</a>
+        <a class="hover:text-white/80 transition-colors" href="services.html">Services</a>
+        <a class="hover:text-white/80 transition-colors" href="locations.html">Locations</a>
+        <a class="hover:text-white/80 transition-colors" href="gallery.html">Gallery</a>
+        <a class="hover:text-white/80 transition-colors" href="ourcrew.html">Our Crew</a>
+      </div>
+      <div class="hidden md:block">
+        <a class="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all" href="bookingform.html">
           Book Appointment
         </a>
-</div>
-<!-- Mobile menu button -->
-<button class="md:hidden text-white p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</button>
-</nav>
-
-<!-- Mobile Drawer Menu -->
-<div id="mobile-menu" class="fixed inset-0 bg-black/70 z-50 hidden md:hidden transition-opacity">
-  <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-[#1e1d1b] text-white p-6 shadow-2xl flex flex-col justify-between">
-    <div>
-      <div class="flex justify-between items-center mb-8">
-        <a class="font-serif text-2xl tracking-widest uppercase text-white" href="index.html">The Trim Town</a>
-        <button id="mobile-menu-close" class="text-gray-400 p-2 hover:text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        </button>
       </div>
-      <nav class="flex flex-col space-y-5 text-base font-medium text-gray-300">
-        <a class="text-white font-semibold py-1 border-l-2 border-white pl-3" href="index.html">Home</a>
-        <a class="hover:text-white py-1" href="services.html">Services</a>
-        <a class="hover:text-white py-1" href="locations.html">Locations</a>
-        <a class="hover:text-white py-1" href="gallery.html">Gallery</a>
-        <a class="hover:text-white py-1" href="ourcrew.html">Our Crew</a>
-      </nav>
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-white p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/70 z-50 hidden md:hidden transition-opacity">
+      <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-[#1e1d1b] text-white p-6 shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-8">
+            <a class="font-serif text-2xl tracking-wide text-white font-medium" href="index.html">The Trim Town</a>
+            <button id="mobile-menu-close" class="text-gray-400 p-2 hover:text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-5 text-base font-medium text-gray-300">
+            <a class="text-white font-semibold py-1 border-l-2 border-white pl-3" href="index.html">Home</a>
+            <a class="hover:text-white py-1" href="services.html">Services</a>
+            <a class="hover:text-white py-1" href="locations.html">Locations</a>
+            <a class="hover:text-white py-1" href="gallery.html">Gallery</a>
+            <a class="hover:text-white py-1" href="ourcrew.html">Our Crew</a>
+          </nav>
+        </div>
+        <div class="pt-6 border-t border-white/10">
+          <a class="w-full flex items-center justify-center py-3 bg-white text-black text-sm font-medium rounded-full transition-colors hover:bg-gray-100" href="bookingform.html">
+            Book Appointment
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="pt-6 border-t border-white/10">
-      <a class="w-full flex items-center justify-center py-3 bg-white text-black text-sm font-medium rounded-full transition-colors hover:bg-gray-100" href="bookingform.html">
-        Book Appointment
-      </a>
-    </div>
-  </div>
-</div>
-<!-- Hero Content -->
-<div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto mt-16 mb-24">
-<p class="uppercase tracking-[0.3em] text-xs font-semibold mb-6">Al Ashraf Mall, Model Town, Bahawalpur</p>
-<!-- TODO: client to approve tagline -->
-<h1 class="text-6xl md:text-8xl font-serif leading-[1.1] mb-6 font-normal">
-  Your Look,<br>Refined.
-</h1>
-<p class="text-lg md:text-xl text-white/90 max-w-2xl mb-10 font-light text-balance leading-relaxed">
-  A place of quality and style, with curated treatments delivered by dedicated stylists in Model Town, Bahawalpur.
-</p>
-<div class="flex flex-col sm:flex-row items-center gap-4">
-<a class="bg-white text-black px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2" href="bookingform.html">
+
+    <!-- Hero Content -->
+    <div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto mt-16 mb-24">
+      <p class="uppercase tracking-[0.3em] text-xs font-semibold mb-6">Al Ashraf Mall, Model Town, Bahawalpur</p>
+      <h1 class="text-6xl md:text-8xl font-serif leading-[1.1] mb-6 font-normal">
+        Your Look,<br>Refined.
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-2xl mb-10 font-light text-balance leading-relaxed">
+        A place of quality and style, with curated treatments delivered by dedicated stylists in Model Town, Bahawalpur.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <a class="bg-white text-black px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-lg" href="bookingform.html">
           Book Appointment
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</a>
-<a class="bg-transparent border border-white/40 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-white/10 transition-colors" href="services.html">
+            <path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a class="bg-transparent border border-white/40 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-white/10 transition-colors" href="services.html">
           Explore Services
         </a>
-</div>
-</div>
-</header>
-<!-- END: Hero Section -->
-<!-- BEGIN: Stats Section -->
-<section class="py-24 bg-brand-surface text-center">
-<div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 divide-x divide-gray-200/0 md:divide-gray-200">
-<div class="flex flex-col items-center">
-<div class="text-5xl font-serif mb-2 text-brand-primary">4.8</div>
-<div class="text-brand-on-surface-variant text-sm tracking-wide">Guest Rating</div>
-</div>
-<div class="flex flex-col items-center border-l-0 md:border-l border-gray-200">
-<div class="text-5xl font-serif mb-2 text-brand-primary">88</div>
-<div class="text-brand-on-surface-variant text-sm tracking-wide">Google Reviews</div>
-</div>
-<!-- TODO: client to provide guest count / staff count -->
-<div class="flex flex-col items-center">
-<div class="text-5xl font-serif mb-2 text-brand-primary">—</div>
-<div class="text-brand-on-surface-variant text-sm tracking-wide">Guests Served</div>
-</div>
-<!-- TODO: client to provide guest count / staff count -->
-<div class="flex flex-col items-center border-l-0 md:border-l border-gray-200">
-<div class="text-5xl font-serif mb-2 text-brand-primary">—</div>
-<div class="text-brand-on-surface-variant text-sm tracking-wide">Stylists</div>
-</div>
-</div>
-</section>
-<!-- END: Stats Section -->
-<!-- BEGIN: Philosophy Section -->
-<section class="py-24 bg-brand-surface">
-<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
-<div class="max-w-xl">
-<p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-6">Our Philosophy</p>
-<h2 class="text-5xl md:text-6xl font-serif leading-tight mb-8">We value our customers &amp; our customers value us.<br></h2>
-<div class="space-y-6 text-brand-on-surface-variant text-lg font-light leading-relaxed">
-<p class="">
-  At The Trim Town, what we are most concerned with is your experience with us.</p>
-<p class="">
-  Our team is dedicated to providing precision styling, personal care, and a welcoming atmosphere in Bahawalpur.</p>
-</div>
-</div>
-<div class="relative h-[600px] rounded-3xl overflow-hidden bg-brand-surface-container-low hidden lg:block">
-<img alt="Salon Care" class="absolute inset-0 w-full h-full object-cover object-right" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB_NO8jTXlp5ci6OjDvjVcvLcC0-QXrMlGL4-UdOVeYU98J4_m13iFpU9NnjzRS7ZMOv0T_CcwGFtjTX1OznNvmKQ7TbYhSdbba25qe23nui5Fj1NVj8uGk5WIiQ7Y36gyIh6HEetpsIYBYh2HSsPzaHm6z9oo75oF0w7XJDOAR5XeAJn3QhdD46rlIWduu01jHdDgrPM4BkxR4jH64dDvXJ1fTpvaL-2fbwrDJ6bjYecqdKasivSA6JZfaiElfH2s993ngB8-QNklpA">
-<!-- Floating Card -->
-<div class="absolute bottom-8 right-8 bg-white/90 backdrop-blur rounded-2xl p-6 shadow-xl border border-white/20">
-<div class="text-3xl font-serif text-brand-primary mb-1">Model Town</div>
-<div class="text-sm text-brand-on-surface-variant">Al Ashraf Mall, Bahawalpur</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: Philosophy Section -->
-<!-- BEGIN: Services Section -->
-<!-- TODO: replace with confirmed Trim Town services + prices -->
-<section class="py-24 bg-[#f6f5f3]">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-<div>
-<p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-3">Signature offerings</p>
-<h2 class="text-4xl md:text-5xl font-serif">Curated Experiences</h2>
-</div>
-<a class="text-sm font-medium hover:opacity-70 transition-opacity flex items-center gap-2 pb-2" href="services.html">
+      </div>
+    </div>
+  </header>
+  <!-- END: Hero Section -->
+
+  <!-- BEGIN: Stats Section -->
+  <section class="py-24 bg-brand-surface text-center">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 divide-x divide-gray-200/0 md:divide-gray-200">
+      <div class="flex flex-col items-center">
+        <div class="text-5xl font-serif mb-2 text-brand-primary">4.8</div>
+        <div class="text-brand-on-surface-variant text-sm tracking-wide">Guest Rating</div>
+      </div>
+      <div class="flex flex-col items-center border-l-0 md:border-l border-gray-200">
+        <div class="text-5xl font-serif mb-2 text-brand-primary">88+</div>
+        <div class="text-brand-on-surface-variant text-sm tracking-wide">Google Reviews</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-5xl font-serif mb-2 text-brand-primary">Model Town</div>
+        <div class="text-brand-on-surface-variant text-sm tracking-wide">Prime Location</div>
+      </div>
+      <div class="flex flex-col items-center border-l-0 md:border-l border-gray-200">
+        <div class="text-5xl font-serif mb-2 text-brand-primary">100%</div>
+        <div class="text-brand-on-surface-variant text-sm tracking-wide">Dedicated Care</div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Stats Section -->
+
+  <!-- BEGIN: Philosophy Section -->
+  <section class="py-24 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
+      <div class="max-w-xl">
+        <p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-6">Our Philosophy</p>
+        <h2 class="text-5xl md:text-6xl font-serif leading-tight mb-8">We value our customers &amp; our customers value us.<br></h2>
+        <div class="space-y-6 text-brand-on-surface-variant text-lg font-light leading-relaxed">
+          <p>
+            At The Trim Town, what we are most concerned with is your experience with us.
+          </p>
+          <p>
+            Our team is dedicated to providing precision styling, personal care, and a welcoming atmosphere in Bahawalpur.
+          </p>
+        </div>
+      </div>
+      <div class="relative h-[600px] rounded-3xl overflow-hidden bg-brand-surface-container-low hidden lg:block shadow-md">
+        <img alt="Salon Care" class="absolute inset-0 w-full h-full object-cover object-right" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB_NO8jTXlp5ci6OjDvjVcvLcC0-QXrMlGL4-UdOVeYU98J4_m13iFpU9NnjzRS7ZMOv0T_CcwGFtjTX1OznNvmKQ7TbYhSdbba25qe23nui5Fj1NVj8uGk5WIiQ7Y36gyIh6HEetpsIYBYh2HSsPzaHm6z9oo75oF0w7XJDOAR5XeAJn3QhdD46rlIWduu01jHdDgrPM4BkxR4jH64dDvXJ1fTpvaL-2fbwrDJ6bjYecqdKasivSA6JZfaiElfH2s993ngB8-QNklpA">
+        <!-- Floating Card -->
+        <div class="absolute bottom-8 right-8 bg-white/90 backdrop-blur rounded-2xl p-6 shadow-xl border border-white/20">
+          <div class="text-3xl font-serif text-brand-primary mb-1">Model Town</div>
+          <div class="text-sm text-brand-on-surface-variant">Al Ashraf Mall, Bahawalpur</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Philosophy Section -->
+
+  <!-- BEGIN: Services Section -->
+  <section class="py-24 bg-[#f6f5f3]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div>
+          <p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-3">Signature offerings</p>
+          <h2 class="text-4xl md:text-5xl font-serif">Curated Experiences</h2>
+        </div>
+        <a class="text-sm font-medium hover:opacity-70 transition-opacity flex items-center gap-2 pb-2" href="services.html">
           View All 
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</a>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Service Card 1 -->
-<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
-<div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
-<div class="absolute inset-0 flex items-center justify-center text-brand-on-surface-variant/30 text-sm italic">Hair Styling</div>
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<h3 class="text-xl font-serif mb-3">Hair Cut &amp; Style</h3>
-<p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
-  A precision cut tailored to your preferences, finished with professional styling.
-</p>
-<div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
-<span class="font-medium text-brand-primary">Price on visit</span>
-<span class="flex items-center gap-1.5 opacity-80">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-  45 min
-</span>
-</div>
-</div>
-</div>
-<!-- Service Card 2 -->
-<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
-<div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
-<div class="absolute inset-0 flex items-center justify-center text-brand-on-surface-variant/30 text-sm italic">Beard Styling</div>
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<h3 class="text-xl font-serif mb-3">Beard Sculpt &amp; Groom</h3>
-<p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
-  Beard shaping, clean line-ups, and grooming tailored to your face structure.
-</p>
-<div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
-<span class="font-medium text-brand-primary">Price on visit</span>
-<span class="flex items-center gap-1.5 opacity-80">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-  30 min
-</span>
-</div>
-</div>
-</div>
-<!-- Service Card 3 -->
-<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
-<div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
-<div class="absolute inset-0 flex items-center justify-center text-brand-on-surface-variant/30 text-sm italic">Facial Treatment</div>
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<h3 class="text-xl font-serif mb-3">Skin Cleansing &amp; Facial</h3>
-<p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
-  Customized cleansing and exfoliation to refresh and hydrate the skin.
-</p>
-<div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
-<span class="font-medium text-brand-primary">Price on visit</span>
-<span class="flex items-center gap-1.5 opacity-80">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-  45 min
-</span>
-</div>
-</div>
-</div>
-<!-- Service Card 4 -->
-<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
-<div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
-<div class="absolute inset-0 flex items-center justify-center text-brand-on-surface-variant/30 text-sm italic">Hair Care</div>
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<h3 class="text-xl font-serif mb-3">Hair Care &amp; Therapy</h3>
-<p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
-  Nourishing scalp wash, conditioning, and hair revitalization treatments.
-</p>
-<div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
-<span class="font-medium text-brand-primary">Price on visit</span>
-<span class="flex items-center gap-1.5 opacity-80">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-  40 min
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: Services Section -->
+            <path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Service Card 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+          <div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO_swWO_5AWSAK0WtQy7c-nalIJFhqSGN5NJoHqEIHs_m-_mPQ5fRxkXtK0fvIfVekGkM_dVgaPnI1eZVXnVEkkzCNfG768rEgwDXQqf5KjiUI8FL9ArFGK4A1-mk2z0w1TaXT6ZpJKoPp1rxzirGr8ljhpJbvSkEU2xL14-gXVyzGJ-jNpcsTh_8YIzyKWzqB_A6QSwnQBd82Vmf5y4cBDfBl5smEOMvSnh9xes7S5RX8sAzD-GRPgVCBerOSl0AIDw" alt="Hair Cut & Style" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-serif mb-3">Hair Cut &amp; Style</h3>
+            <p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
+              A precision cut tailored to your preferences, finished with professional styling.
+            </p>
+            <div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
+              <span class="font-medium text-brand-primary">Price on visit</span>
+              <span class="flex items-center gap-1.5 opacity-80">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                45 min
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Service Card 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+          <div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRxIkwt6_TQGOlPJkNlaxcnBfpR6qBNFQI5l0MwE1DpXV4lcHqkeifXHfUgQoYiUPQU1FtMVhxpqSFRSPL2gdt3vbIULiI4NwyRFscXynf0TWPpbC-yXreG171n7Cx8RIU2NZ2zIJljdOzYjTyas_yDIi6z2dlNXKODsFGr-MD0GjInHF5k-sfZSckvAJsaaYfj3LBqtw8gsAGSeBvWEJdMD2UQtbNY10RRA8BmzGLMlFf_w_TYjspE8l5gwa33vtWyKQVgqoEvR7G8g" alt="Beard Sculpt & Groom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-serif mb-3">Beard Sculpt &amp; Groom</h3>
+            <p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
+              Beard shaping, clean line-ups, and grooming tailored to your face structure.
+            </p>
+            <div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
+              <span class="font-medium text-brand-primary">Price on visit</span>
+              <span class="flex items-center gap-1.5 opacity-80">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                30 min
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Service Card 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+          <div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT9CAdmeh5ViNEB6leI1biPkRCaROT1oMIpXNCDLod5J0Su-B6s9CzNXrApsltyMmom3wfpwPlvD345rKBk1kyFmp_yvBD4CCQOEjGwIDufqyFvx7ucihYR67Lf3o-5BcWTsxduzD7_cp8msNHtcITsIxiLjcc0SR1o2xIW39HfnB6GtNq9ZzQzi29uwtzg8yizW_eE77AOX9BMF7UtRPyv7z02Ppl_L2_PeltX5aKWmLFGGpW_QvgEz8IKQ26aduJ9SR_-r84CIHsSQ" alt="Skin Cleansing & Facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-serif mb-3">Skin Cleansing &amp; Facial</h3>
+            <p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
+              Customized cleansing and exfoliation to refresh and hydrate the skin.
+            </p>
+            <div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
+              <span class="font-medium text-brand-primary">Price on visit</span>
+              <span class="flex items-center gap-1.5 opacity-80">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                45 min
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Service Card 4 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+          <div class="h-64 overflow-hidden relative bg-brand-surface-container-low">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsYFY94Sw1ZV_KQ_dsohfkUy7uZ5jZEu4PKBQ9q1Qt8qJZywNd9To6YMZZwnXn-UtPriG1epNOvZzeBH2mvE_tHHeIewbOxyJP2UjbAj9Uqa_9vg914W7H4UrIaR-noVhFaKx4n9kUXQknedmsJcP2xwKgHeBnh9C2OoJWt_4eraab7DOk7c-xt-JAddpzlHs_Ge90gifptYL1VVK3Q4H9Rk4UwjjBT_wPLpyuBKJ0bjSTvp0zqXSSH1LPpBYIhsWTsg" alt="Hair Care & Therapy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-serif mb-3">Hair Care &amp; Therapy</h3>
+            <p class="text-sm text-brand-on-surface-variant line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
+              Nourishing scalp wash, conditioning, and hair revitalization treatments.
+            </p>
+            <div class="flex justify-between items-center text-sm pt-4 border-t border-brand-surface-container text-brand-on-surface-variant">
+              <span class="font-medium text-brand-primary">Price on visit</span>
+              <span class="flex items-center gap-1.5 opacity-80">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                40 min
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Services Section -->
 
-<!-- BEGIN: Locations Section -->
-<section class="py-24 bg-[#f6f5f3]">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center mb-16">
-<p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-3">Location</p>
-<h2 class="text-4xl md:text-5xl font-serif">Find Us</h2>
-</div>
-<div class="max-w-xl mx-auto">
-<!-- Single Location Card -->
-<div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group">
-<div class="h-64 w-full bg-brand-surface-container-low overflow-hidden relative">
-<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmv-Irds68evD3uDEtZbgyVsXi35llijrxTx7j0ey8VtQBlU2dmBLW3rFO5I-9AYKq-nqhweNXNY13Sd2NaAcS76QDVNckQllwMDSmgnI8KJ9cBm48Ox42jsIYjrOEXYdCO2K4eet2wf-CiZ0q_euPSod9mT9qnQoZ-Qx12wtjsKLiQinwHrdvVn68UlqtnMh0TgHtU_dn20dEwoHhCONt_qMhCFhJY5hjwAsEhtavKwL0lXmpXId_9LZ3JisFfLBY8c9hpyeQdegWg" alt="Model Town Branch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-</div>
-<div class="p-8 flex flex-col flex-grow justify-between">
-<div>
-<h3 class="text-2xl font-serif mb-3">Model Town Branch</h3>
-<div class="flex items-start gap-3 text-sm text-brand-on-surface-variant font-light mb-4">
-<svg class="w-5 h-5 shrink-0 opacity-60 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<p>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</p>
-</div>
-<div class="flex items-center gap-3 text-sm text-brand-on-surface-variant font-light mb-6">
-<svg class="w-5 h-5 shrink-0 opacity-60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<a href="tel:+92622302027" class="hover:underline">+92 62 2302027</a>
-</div>
-</div>
-<a href="https://maps.google.com/?q=9MQ6+9W+Bahawalpur" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-accent hover:text-black transition-colors">
-  Get Directions &rarr;
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: Locations Section -->
+  <!-- BEGIN: Locations Section -->
+  <section class="py-24 bg-[#f6f5f3]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-3">Location</p>
+        <h2 class="text-4xl md:text-5xl font-serif">Find Us</h2>
+      </div>
+      <div class="max-w-xl mx-auto">
+        <!-- Single Location Card -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group border border-gray-100">
+          <div class="h-64 w-full bg-brand-surface-container-low overflow-hidden relative">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmv-Irds68evD3uDEtZbgyVsXi35llijrxTx7j0ey8VtQBlU2dmBLW3rFO5I-9AYKq-nqhweNXNY13Sd2NaAcS76QDVNckQllwMDSmgnI8KJ9cBm48Ox42jsIYjrOEXYdCO2K4eet2wf-CiZ0q_euPSod9mT9qnQoZ-Qx12wtjsKLiQinwHrdvVn68UlqtnMh0TgHtU_dn20dEwoHhCONt_qMhCFhJY5hjwAsEhtavKwL0lXmpXId_9LZ3JisFfLBY8c9hpyeQdegWg" alt="Model Town Branch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-8 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="text-2xl font-serif mb-3">Model Town Branch</h3>
+              <div class="flex items-start gap-3 text-sm text-brand-on-surface-variant font-light mb-4">
+                <svg class="w-5 h-5 shrink-0 opacity-60 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <p>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</p>
+              </div>
+              <div class="flex items-center gap-3 text-sm text-brand-on-surface-variant font-light mb-6">
+                <svg class="w-5 h-5 shrink-0 opacity-60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <a href="tel:+92622302027" class="hover:underline">+92 62 2302027</a>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/3jk3Wzo6eWnf3U1w8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-accent hover:text-black transition-colors">
+              Get Directions &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Locations Section -->
 
-<!-- BEGIN: Artisans Section -->
-<!-- TODO: client to supply staff names + photos -->
-<section class="py-24 bg-brand-surface border-t border-brand-surface-container">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-<div>
-<p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-3">Our Team</p>
-<h2 class="text-4xl md:text-5xl font-serif">Stylists &amp; Staff</h2>
-</div>
-<a class="text-sm font-medium hover:opacity-70 transition-opacity flex items-center gap-2 pb-2" href="ourcrew.html">
+  <!-- BEGIN: Artisans Section -->
+  <section class="py-24 bg-brand-surface border-t border-brand-surface-container">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div>
+          <p class="text-brand-accent uppercase tracking-widest text-xs font-semibold mb-3">Our Team</p>
+          <h2 class="text-4xl md:text-5xl font-serif">Stylists &amp; Staff</h2>
+        </div>
+        <a class="text-sm font-medium hover:opacity-70 transition-opacity flex items-center gap-2 pb-2" href="ourcrew.html">
           All Crew 
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</a>
-</div>
-<div class="bg-white rounded-3xl border border-gray-100 p-12 text-center max-w-2xl mx-auto shadow-sm">
-  <h3 class="text-2xl font-serif mb-3">Meet Our Team — Coming Soon</h3>
-  <p class="text-sm text-brand-on-surface-variant leading-relaxed">
-    We are currently updating our stylist profiles. Please check back soon or visit us at Al Ashraf Mall, Model Town, Bahawalpur.
-  </p>
-</div>
-</div>
-</section>
-<!-- END: Artisans Section -->
+            <path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="bg-white rounded-3xl border border-gray-100 p-12 text-center max-w-2xl mx-auto shadow-sm">
+        <h3 class="text-2xl font-serif mb-3">Meet Our Dedicated Stylists</h3>
+        <p class="text-sm text-brand-on-surface-variant leading-relaxed mb-6">
+          Our team delivers tailored cuts, beard sculpting, and restorative therapies. Visit us at Al Ashraf Mall, Model Town, Bahawalpur.
+        </p>
+        <a class="inline-flex items-center justify-center px-6 py-2.5 bg-brand-button hover:bg-brand-buttonHover text-white text-sm font-medium rounded-full transition-colors" href="ourcrew.html">
+          View Stylist Profiles
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END: Artisans Section -->
 
-<!-- BEGIN: Footer / CTA Section -->
-<footer class="bg-[#2d2a28] text-white pt-32 pb-16">
-<div class="max-w-4xl mx-auto px-6 text-center mb-32">
-<div class="text-brand-accent mb-6 flex justify-center">
-<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</div>
-<h2 class="text-5xl md:text-7xl font-serif mb-6">Your style&nbsp;<i class="italic">awaits.</i></h2>
-<p class="text-lg text-white/80 mb-10 font-light text-balance">
-        Reserve your session with us &amp; let us take care of the rest.</p>
-<a class="inline-flex items-center gap-2 bg-white text-black px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors" href="bookingform.html">Place Your Booking<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</a>
-</div>
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-16">
-<div class="md:col-span-1">
-<h3 class="text-3xl font-serif mb-4">The Trim Town</h3>
-<p class="text-white/60 text-sm font-light mb-6">A curated salon experience in Bahawalpur.</p>
-<div class="flex gap-4 opacity-80">
-<!-- Instagram -->
-<a class="hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" aria-label="Instagram">
-<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
-</a>
-<!-- Facebook -->
-<a class="hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" aria-label="Facebook">
-<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
-</a>
-<!-- TikTok -->
-<a class="hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" aria-label="TikTok">
-<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.52 4.79 4.79 0 0 1-.95-.91z"></path></svg>
-</a>
-</div>
-</div>
-<div>
-<h4 class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-6">Explore</h4>
-<ul class="space-y-4 text-sm text-white/80 font-light">
-<li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
-<li><a class="hover:text-white transition-colors" href="services.html">Services</a></li>
-<li><a class="hover:text-white transition-colors" href="locations.html">Locations</a></li>
-<li><a class="hover:text-white transition-colors" href="gallery.html">Gallery</a></li>
-<li><a class="hover:text-white transition-colors" href="ourcrew.html">Our Crew</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-6">Visit</h4>
-<ul class="space-y-4 text-sm text-white/80 font-light">
-<li><a class="hover:text-white transition-colors" href="bookingform.html">Book Appointment</a></li>
-<li><a class="hover:text-white transition-colors" href="locations.html">Find Us</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-6">Contact</h4>
-<ul class="space-y-4 text-sm text-white/80 font-light">
-<li><a class="hover:text-white transition-colors" href="tel:+92622302027">+92 62 2302027</a></li>
-<li>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</li>
-</ul>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-white/10 text-xs text-white/50 flex flex-col sm:flex-row justify-between items-center gap-4">
-  <p>© 2026 The Trim Town. All rights reserved.</p>
-</div>
-</footer>
-<!-- END: Footer / CTA Section -->
+  <!-- BEGIN: Footer / CTA Section -->
+  <footer class="bg-[#2d2a28] text-white pt-32 pb-16">
+    <div class="max-w-4xl mx-auto px-6 text-center mb-32">
+      <div class="text-brand-accent mb-6 flex justify-center">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h2 class="text-5xl md:text-7xl font-serif mb-6">Your style&nbsp;<i class="italic">awaits.</i></h2>
+      <p class="text-lg text-white/80 mb-10 font-light text-balance">
+        Reserve your session with us &amp; let us take care of the rest.
+      </p>
+      <a class="inline-flex items-center gap-2 bg-white text-black px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors shadow-lg" href="bookingform.html">
+        Place Your Booking
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-16">
+      <div class="md:col-span-1">
+        <h3 class="text-3xl font-serif mb-4">The Trim Town</h3>
+        <p class="text-white/60 text-sm font-light mb-6">A curated salon experience in Bahawalpur.</p>
+        <div class="flex gap-4 opacity-80">
+          <!-- Instagram -->
+          <a class="hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+          </a>
+          <!-- Facebook -->
+          <a class="hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+          </a>
+          <!-- TikTok -->
+          <a class="hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.52 4.79 4.79 0 0 1-.95-.91z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-6">Explore</h4>
+        <ul class="space-y-4 text-sm text-white/80 font-light">
+          <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Services</a></li>
+          <li><a class="hover:text-white transition-colors" href="locations.html">Locations</a></li>
+          <li><a class="hover:text-white transition-colors" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-white transition-colors" href="ourcrew.html">Our Crew</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-6">Visit</h4>
+        <ul class="space-y-4 text-sm text-white/80 font-light">
+          <li><a class="hover:text-white transition-colors" href="bookingform.html">Book Appointment</a></li>
+          <li><a class="hover:text-white transition-colors" href="locations.html">Find Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-6">Contact</h4>
+        <ul class="space-y-4 text-sm text-white/80 font-light">
+          <li><a class="hover:text-white transition-colors" href="tel:+92622302027">+92 62 2302027</a></li>
+          <li>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-white/10 text-xs text-white/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 The Trim Town. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- END: Footer / CTA Section -->
 
-<script>
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const menuClose = document.getElementById('mobile-menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('hidden');
-    });
-  }
-  if (menuClose && mobileMenu) {
-    menuClose.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-  }
-  if (mobileMenu) {
-    mobileMenu.addEventListener('click', (e) => {
-      if (e.target === mobileMenu) {
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+      });
+    }
+    if (menuClose && mobileMenu) {
+      menuClose.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
-      }
-    });
-  }
-</script>
-</body></html>
+      });
+    }
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
