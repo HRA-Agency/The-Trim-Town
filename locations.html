@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Location - The Trim Town</title>
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
+  <!-- Material Symbols for Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: '#f9f9f9',
+            'surface-dim': '#dadada',
+            'surface-container-low': '#f3f3f3',
+            'brand-dark': '#2a2a2a',
+            'brand-gray': '#555555',
+            'brand-accent': '#8a8a8a',
+            'brand-light': '#ffffff',
+            'button-bg': '#828e82',
+            'button-hover': '#6b776b',
+            'footer-bg': '#272523',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style data-purpose="custom-styles">
+    body {
+      background-color: #f9f9f9;
+      color: #2a2a2a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .bg-dotted {
+      background-size: 20px 20px;
+      background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+    }
+    .icon-small {
+      font-size: 1.125rem;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-dotted">
+  <!-- BEGIN: Global Header -->
+  <header class="w-full py-6 px-8 bg-surface/90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a class="text-3xl font-serif tracking-widest text-brand-dark uppercase" href="index.html">The Trim Town</a>
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-8 items-center text-sm tracking-wide text-brand-gray">
+        <a class="hover:text-brand-dark transition-colors" href="index.html">Home</a>
+        <a class="hover:text-brand-dark transition-colors" href="services.html">Services</a>
+        <a class="text-brand-dark border-b border-brand-dark pb-1 font-medium" href="locations.html">Locations</a>
+        <a class="hover:text-brand-dark transition-colors" href="gallery.html">Gallery</a>
+        <a class="hover:text-brand-dark transition-colors" href="ourcrew.html">Our Crew</a>
+      </nav>
+      <!-- CTA Button -->
+      <a class="hidden md:inline-block bg-button-bg hover:bg-button-hover text-white px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-colors"
+        href="bookingform.html">
+        Book Appointment
+      </a>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-brand-dark p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </header>
+  <!-- END: Global Header -->
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black/60 z-50 hidden md:hidden transition-opacity">
+    <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white p-6 shadow-2xl flex flex-col justify-between">
+      <div>
+        <div class="flex justify-between items-center mb-8">
+          <a class="font-serif text-2xl tracking-widest uppercase text-brand-dark" href="index.html">The Trim Town</a>
+          <button id="mobile-menu-close" class="text-gray-500 p-2">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-5 text-base font-medium text-gray-700">
+          <a class="hover:text-black py-1" href="index.html">Home</a>
+          <a class="hover:text-black py-1" href="services.html">Services</a>
+          <a class="text-black font-semibold py-1 border-l-2 border-black pl-3" href="locations.html">Locations</a>
+          <a class="hover:text-black py-1" href="gallery.html">Gallery</a>
+          <a class="hover:text-black py-1" href="ourcrew.html">Our Crew</a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-gray-200">
+        <a class="w-full flex items-center justify-center py-3 bg-button-bg hover:bg-button-hover text-white text-sm font-medium rounded-full transition-colors" href="bookingform.html">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEGIN: Main Content -->
+  <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <!-- Section Header -->
+    <div class="text-center mb-16 md:mb-24">
+      <p class="text-sm font-semibold tracking-widest text-brand-accent uppercase mb-4">Visit Us</p>
+      <h1 class="text-5xl md:text-6xl font-serif italic mb-6">Our Location</h1>
+      <p class="max-w-2xl mx-auto text-brand-gray leading-relaxed">
+        Visit us at Al Ashraf Mall, Model Town, Bahawalpur — a welcoming space designed for quality hair styling and grooming.
+      </p>
+    </div>
+
+    <!-- Locations List (Single Location) -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Location Card: Model Town Branch -->
+      <div class="flex flex-col lg:flex-row bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+        <!-- Image -->
+        <div class="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px]">
+          <img alt="The Trim Town Model Town Interior" class="absolute inset-0 w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmv-Irds68evD3uDEtZbgyVsXi35llijrxTx7j0ey8VtQBlU2dmBLW3rFO5I-9AYKq-nqhweNXNY13Sd2NaAcS76QDVNckQllwMDSmgnI8KJ9cBm48Ox42jsIYjrOEXYdCO2K4eet2wf-CiZ0q_euPSod9mT9qnQoZ-Qx12wtjsKLiQinwHrdvVn68UlqtnMh0TgHtU_dn20dEwoHhCONt_qMhCFhJY5hjwAsEhtavKwL0lXmpXId_9LZ3JisFfLBY8c9hpyeQdegWg">
+        </div>
+        <!-- Content -->
+        <div class="lg:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-accent mb-2">Studio</span>
+          <h2 class="text-3xl font-serif mb-6 text-brand-dark">Model Town Branch</h2>
+          <ul class="space-y-4 text-brand-gray mb-10 text-sm">
+            <li class="flex items-start">
+              <span class="material-symbols-outlined icon-small mr-3 text-brand-accent mt-0.5">location_on</span>
+              <span>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur, Pakistan</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-symbols-outlined icon-small mr-3 text-brand-accent">call</span>
+              <a class="hover:text-brand-dark transition-colors" href="tel:+92622302027">+92 62 2302027</a>
+            </li>
+            <li class="flex items-start">
+              <span class="material-symbols-outlined icon-small mr-3 text-brand-accent mt-0.5">schedule</span>
+              <!-- TODO: confirm full weekly hours, only opening time confirmed -->
+              <span>Opens 11:00 AM</span>
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-4">
+            <a class="inline-flex items-center justify-center px-6 py-2.5 bg-button-bg hover:bg-button-hover text-white rounded-full text-sm font-medium transition-colors"
+              href="https://maps.google.com/?q=9MQ6+9W+Bahawalpur" target="_blank">
+              <span class="material-symbols-outlined text-[18px] mr-2">near_me</span>
+              Get Directions
+            </a>
+            <a class="inline-flex items-center justify-center px-6 py-2.5 border border-gray-300 hover:border-gray-400 text-brand-dark rounded-full text-sm font-medium transition-colors bg-white"
+              href="bookingform.html">
+              Book Appointment
+              <span class="material-symbols-outlined text-[18px] ml-2">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- END: Main Content -->
+
+  <!-- BEGIN: Footer -->
+  <footer class="bg-footer-bg text-gray-400 py-16 px-8 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <!-- Brand Info -->
+      <div class="col-span-1 md:col-span-1">
+        <a class="text-white text-2xl font-serif mb-4 block" href="index.html">The Trim Town</a>
+        <p class="text-sm mb-6 leading-relaxed">
+          A curated salon experience in Bahawalpur.
+        </p>
+        <div class="flex space-x-4">
+          <a class="hover:text-white transition-colors" href="https://instagram.com/thetrimtownstudio" target="_blank" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+          </a>
+          <a class="hover:text-white transition-colors" href="https://facebook.com/trimtownstudio" target="_blank" aria-label="Facebook">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+          </a>
+          <a class="hover:text-white transition-colors" href="https://www.tiktok.com/@thetrimtown" target="_blank" aria-label="TikTok">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.52 4.79 4.79 0 0 1-.95-.91z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Explore Links -->
+      <div class="col-span-1">
+        <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Explore</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Services</a></li>
+          <li><a class="hover:text-white transition-colors" href="locations.html">Locations</a></li>
+          <li><a class="hover:text-white transition-colors" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-white transition-colors" href="ourcrew.html">Our Crew</a></li>
+        </ul>
+      </div>
+      <!-- Visit Links -->
+      <div class="col-span-1">
+        <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Visit</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a class="hover:text-white transition-colors" href="bookingform.html">Book Appointment</a></li>
+          <li><a class="hover:text-white transition-colors" href="locations.html">Find Us</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="col-span-1">
+        <h4 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a class="hover:text-white transition-colors" href="tel:+92622302027">+92 62 2302027</a></li>
+          <li>Shop 6, 7, 8, Al Ashraf Mall, Model Town, Bahawalpur</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+      <p>© 2026 The Trim Town. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+      });
+    }
+    if (menuClose && mobileMenu) {
+      menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    }
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
